@@ -1,5 +1,28 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    // Build configuration for better error handling
+    typescript: {
+      ignoreBuildErrors: false,
+    },
+    eslint: {
+      ignoreDuringBuilds: false,
+    },
+    
+    // Environment variable validation
+    env: {
+      NEXT_PUBLIC_BACKEND_BASE_URL: process.env.NEXT_PUBLIC_BACKEND_BASE_URL,
+      NEXT_PUBLIC_Site_URL: process.env.NEXT_PUBLIC_Site_URL,
+    },
+    
+    // Build fallback for missing environment variables
+    generateBuildId: async () => {
+      // Warn about missing environment variables during build
+      if (!process.env.NEXT_PUBLIC_BACKEND_BASE_URL) {
+        console.warn('⚠️  NEXT_PUBLIC_BACKEND_BASE_URL is not set. API calls will use fallback data.');
+      }
+      return 'build-' + Date.now();
+    },
+    
     images: {
       domains: ['ik.imagekit.io', 'localhost', 'newadmin.techmapperz.com'],
         remotePatterns: [
