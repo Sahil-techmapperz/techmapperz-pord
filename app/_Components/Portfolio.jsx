@@ -5,9 +5,9 @@ import HoverButton from './ExpandButton'
 import { useState, useEffect } from 'react'
 import { enhancedPortfolioData } from '../portfolios/enhancedPortfolioData'
 
-// Get featured projects from enhanced data (first 6 projects for home page)
+// Get featured projects from enhanced data (first 3 projects for home page)
 const getFeaturedProjects = () => {
-  return enhancedPortfolioData.slice(0, 6).map((item, index) => {
+  return enhancedPortfolioData.slice(0, 3).map((item, index) => {
     const slug = item.slug || item.link?.replace('/portfolios/', '') || 
                 item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
     
