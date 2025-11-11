@@ -72,9 +72,37 @@ jobs:
           export NODE_ENV=production
           export NODE_OPTIONS="--max-old-space-size=1536"
           
-          # Install dependencies and build
-          npm ci --production --silent
-          timeout 600 npm run build || (echo "Build timed out, trying with more memory..." && NODE_OPTIONS="--max-old-space-size=2048" timeout 900 npm run build)
+          # Install dependencies (including dev dependencies for build)
+          npm ci --silent
+          
+          # Build the application with proper error handling and memory management
+          echo "Starting build process with memory optimization..."
+          
+          # First try with moderate memory
+          export NODE_OPTIONS="--max-old-space-size=2048"
+          if timeout 1200 npm run build; then
+            echo "✅ Build completed successfully"
+          else
+            echo "❌ Build failed, trying with maximum memory..."
+            export NODE_OPTIONS="--max-old-space-size=3072"
+            if timeout 1800 npm run build; then
+              echo "✅ Build completed with increased memory"
+            else
+              echo "❌ Build failed completely. Checking VPS resources..."
+              free -h
+              df -h
+              echo "❌ Deployment aborted - build cannot complete."
+              exit 1
+            fi
+          fi
+          
+          # Verify build exists
+          if [ ! -d ".next" ]; then
+            echo "❌ .next directory not found after build. Build failed."
+            exit 1
+          fi
+          
+          echo "✅ Build verification successful"
           
           # Stop existing PM2 process and start new one
           pm2 stop techmapperz 2>/dev/null || echo "No existing process to stop"
