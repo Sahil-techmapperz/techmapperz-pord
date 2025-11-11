@@ -250,46 +250,6 @@ export default function RootLayout({ children }) {
 
       <body className={montserrat.variable}>
         <CriticalCSS />
-        
-        {/* Mobile viewport optimization */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Mobile performance optimizations
-              if (window.innerWidth < 768) {
-                // Reduce scroll event frequency on mobile
-                let ticking = false;
-                const originalScroll = window.addEventListener;
-                window.addEventListener = function(type, listener, options) {
-                  if (type === 'scroll') {
-                    const throttledListener = function(e) {
-                      if (!ticking) {
-                        requestAnimationFrame(() => {
-                          listener(e);
-                          ticking = false;
-                        });
-                        ticking = true;
-                      }
-                    };
-                    return originalScroll.call(this, type, throttledListener, options);
-                  }
-                  return originalScroll.call(this, type, listener, options);
-                };
-                
-                // Preload critical mobile resources
-                const criticalImages = ['/logo.webp'];
-                criticalImages.forEach(src => {
-                  const link = document.createElement('link');
-                  link.rel = 'preload';
-                  link.href = src;
-                  link.as = 'image';
-                  document.head.appendChild(link);
-                });
-              }
-            `,
-          }}
-        />
-        
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <Navbar />
         <main id="main-content" role="main">{children}</main>

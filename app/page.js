@@ -1,14 +1,16 @@
 import ScrollToTop from './_Components/ScrollToTop';
 import dynamic from 'next/dynamic';
 
-// Adaptive carousel that serves mobile-optimized version for mobile devices
-const AdaptiveCarousel = dynamic(() => import('./_Components/AdaptiveCarousel'), {
-  ssr: true,
+// Critical above-the-fold components - optimized for performance
+const OptimizedHomeCarousel = dynamic(() => import('./_Components/OptimizedHomeCarousel'), {
+  ssr: true, // Enable SSR for critical above-the-fold content
   loading: () => (
-    <div className="h-screen bg-black flex items-center justify-center">
-      <div className="text-center space-y-3 animate-pulse">
-        <div className="h-6 bg-gray-700 rounded w-48 mx-auto"></div>
-        <div className="h-4 bg-gray-800 rounded w-32 mx-auto"></div>
+    <div className="h-[90vh] bg-black animate-pulse">
+      <div className="flex items-center justify-center h-full">
+        <div className="text-center space-y-4">
+          <div className="h-8 bg-gray-800 rounded w-64 mx-auto"></div>
+          <div className="h-4 bg-gray-700 rounded w-48 mx-auto"></div>
+        </div>
       </div>
     </div>
   ),
@@ -189,7 +191,7 @@ const Home = () => {
   return (
     <div>
       <ScrollToTop />
-      <AdaptiveCarousel />
+      <OptimizedHomeCarousel />
       <section className="bg-black pt-8 max-sm:py-2 max-sm:px-4 px-[4rem] relative overflow-x-hidden w-full ">
         <div className="grid grid-cols-1 m-auto">
           <div className="flex flex-col items-center">
@@ -211,14 +213,14 @@ const Home = () => {
 
       {/* Portfolio Section - Higher priority, loads sooner on mobile */}
       <LazySection 
-        mobileRootMargin="300px 0px"
+        mobileRootMargin="150px 0px"
         fallback={
-          <div className="min-h-[200px] md:min-h-[400px] bg-gray-900 animate-pulse">
-            <div className="mx-auto max-w-7xl px-4 py-6 md:py-12">
-              <div className="h-6 md:h-8 bg-gray-800 rounded w-48 md:w-64 mx-auto mb-6 md:mb-8"></div>
-              <div className="grid gap-4 md:gap-8 grid-cols-1 md:grid-cols-2">
-                <div className="h-32 md:h-48 bg-gray-800 rounded-xl md:rounded-2xl"></div>
-                <div className="h-32 md:h-48 bg-gray-800 rounded-xl md:rounded-2xl"></div>
+          <div className="min-h-[400px] bg-gray-900 animate-pulse">
+            <div className="mx-auto max-w-7xl px-4 py-12">
+              <div className="h-8 bg-gray-800 rounded w-64 mx-auto mb-8"></div>
+              <div className="grid gap-8 md:grid-cols-2">
+                <div className="h-48 bg-gray-800 rounded-2xl"></div>
+                <div className="h-48 bg-gray-800 rounded-2xl"></div>
               </div>
             </div>
           </div>
@@ -229,58 +231,58 @@ const Home = () => {
         </section>
       </LazySection>
 
-      {/* Technology Section - Delayed for mobile */}
+      {/* Technology Section */}
       <LazySection 
-        mobileRootMargin="400px 0px"
-        fallback={<div className="min-h-[150px] md:min-h-[300px] bg-gray-800 animate-pulse" />}
+        mobileRootMargin="100px 0px"
+        fallback={<div className="min-h-[300px] bg-gray-800 animate-pulse" />}
       >
         <Technology />
       </LazySection>
 
-      {/* Industry Expertise Section - Delayed for mobile */}
+      {/* Industry Expertise Section */}
       <LazySection 
-        mobileRootMargin="400px 0px"
-        fallback={<div className="min-h-[150px] md:min-h-[300px] bg-black animate-pulse" />}
+        mobileRootMargin="100px 0px"
+        fallback={<div className="min-h-[300px] bg-black animate-pulse" />}
       >
         <IndustryExpertise />
       </LazySection>
 
-      {/* About Us Section - Delayed for mobile */}
+      {/* About Us Section */}
       <LazySection 
-        mobileRootMargin="400px 0px"
-        fallback={<div className="min-h-[150px] md:min-h-[300px] bg-gray-900 animate-pulse" />}
+        mobileRootMargin="75px 0px"
+        fallback={<div className="min-h-[300px] bg-gray-900 animate-pulse" />}
       >
         <AboutUs />
       </LazySection>
 
-      {/* Happy Clients Section - Very delayed for mobile */}
+      {/* Happy Clients Section */}
       <LazySection 
-        mobileRootMargin="500px 0px"
-        fallback={<div className="min-h-[100px] md:min-h-[200px] bg-gray-800 animate-pulse" />}
+        mobileRootMargin="75px 0px"
+        fallback={<div className="min-h-[200px] bg-gray-800 animate-pulse" />}
       >
         <HappyClients />
       </LazySection>
 
-      {/* Blog Section - Very delayed for mobile */}
+      {/* Blog Section */}
       <LazySection 
-        mobileRootMargin="500px 0px"
-        fallback={<div className="min-h-[200px] md:min-h-[400px] bg-gray-900 animate-pulse" />}
+        mobileRootMargin="50px 0px"
+        fallback={<div className="min-h-[400px] bg-gray-900 animate-pulse" />}
       >
         <OurBlog />
       </LazySection>
 
-      {/* Testimonial Section - Very delayed for mobile */}
+      {/* Testimonial Section */}
       <LazySection 
-        mobileRootMargin="500px 0px"
-        fallback={<div className="min-h-[150px] md:min-h-[300px] bg-black animate-pulse" />}
+        mobileRootMargin="50px 0px"
+        fallback={<div className="min-h-[300px] bg-black animate-pulse" />}
       >
         <Testimonial />
       </LazySection>
 
-      {/* Contact Section - Load when almost visible */}
+      {/* Contact Section */}
       <LazySection 
-        mobileRootMargin="200px 0px"
-        fallback={<div className="min-h-[200px] md:min-h-[400px] bg-gray-900 animate-pulse" />}
+        mobileRootMargin="25px 0px"
+        fallback={<div className="min-h-[400px] bg-gray-900 animate-pulse" />}
       >
         <Homecontact />
       </LazySection>
