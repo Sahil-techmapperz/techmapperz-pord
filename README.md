@@ -1,6 +1,103 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Techmapperz Website
 
-## Getting Started
+This is the official website for Techmapperz, built with [Next.js](https://nextjs.org/) and deployed with automated CI/CD pipeline.
+
+## 🚀 Auto-Deployment System
+
+This project features a fully automated deployment system that deploys to a Hostinger VPS whenever code is pushed to the main branch.
+
+### How Auto-Deployment Works
+
+```
+GitHub Push → GitHub Actions → Build → Deploy to VPS → Live Website
+```
+
+#### 1. **Trigger (GitHub Push)**
+- Any push to `main` or `master` branch triggers the deployment
+- Pull requests to these branches also trigger builds (but no deployment)
+
+#### 2. **GitHub Actions Build Process** (`.github/workflows/deploy.yml`)
+- **Environment Setup**: Ubuntu runner with Node.js 18
+- **Dependency Installation**: `npm ci` for clean install
+- **Build Generation**: `npm run build` with production environment variables
+- **Artifact Preparation**: Packages `.next`, `package.json`, and `package-lock.json`
+
+#### 3. **VPS Deployment Process**
+- **File Transfer**: Built files uploaded to VPS via SCP
+- **Code Sync**: Latest code pulled from GitHub repository
+- **Environment Setup**: Environment variables configured on VPS
+- **Dependency Installation**: Production dependencies installed
+- **Process Management**: PM2 restarts the application
+- **Health Check**: Deployment verification
+
+### 🔧 VPS Configuration
+
+| Component | Details |
+|-----------|---------|
+| **Server** | Hostinger VPS |
+| **OS** | Ubuntu Linux |
+| **Runtime** | Node.js 18 |
+| **Process Manager** | PM2 |
+| **Port** | 3000 |
+| **Directory** | `/root/techmapperz-pord/` |
+
+### 🔐 Required GitHub Secrets
+
+The following secrets must be configured in GitHub repository settings:
+
+```bash
+VPS_HOST              # VPS IP address
+VPS_USERNAME          # VPS username (usually 'root')
+VPS_PASSWORD          # VPS password
+VPS_PORT              # SSH port (usually 22)
+NEXT_PUBLIC_BACKEND_BASE_URL  # API base URL
+NEXT_PUBLIC_Site_URL  # Website URL
+```
+
+### 📋 Deployment Steps Breakdown
+
+1. **Code Push**
+   ```bash
+   git add .
+   git commit -m "Your changes"
+   git push origin main
+   ```
+
+2. **GitHub Actions Workflow**
+   - Checkout code
+   - Setup Node.js environment
+   - Install dependencies
+   - Build Next.js application
+   - Upload build files to VPS
+   - Execute deployment script on VPS
+
+3. **VPS Deployment Script**
+   - Pull latest code from GitHub
+   - Create environment configuration
+   - Install production dependencies
+   - Verify build files
+   - Restart PM2 process
+   - Confirm deployment status
+
+### 🎯 Deployment Features
+
+- ✅ **Zero-Downtime Deployment**: PM2 gracefully restarts the application
+- ✅ **Build Optimization**: Pre-built on GitHub Actions for faster deployment
+- ✅ **Environment Management**: Automatic environment variable configuration
+- ✅ **Error Recovery**: Automatic fallbacks and error handling
+- ✅ **Health Monitoring**: Post-deployment verification
+- ✅ **Process Management**: PM2 ensures application stays running
+
+### 📊 Performance Optimizations
+
+- **Build Caching**: npm cache for faster dependency installation
+- **Memory Optimization**: `--max-old-space-size=1536` for Node.js
+- **Production Build**: Optimized Next.js build with minification
+- **Process Management**: PM2 cluster mode for better performance
+
+## 🛠️ Local Development
+
+### Getting Started
 
 First, run the development server:
 
@@ -16,21 +113,47 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Environment Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Copy environment variables:
+   ```bash
+   cp .env.example .env
+   ```
 
-## Learn More
+2. Update environment variables in `.env`:
+   ```bash
+   NEXT_PUBLIC_BACKEND_BASE_URL=your_api_url
+   NEXT_PUBLIC_Site_URL=your_site_url
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+### Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+├── app/                    # Next.js App Router
+│   ├── _Components/       # Reusable components
+│   ├── api/              # API routes
+│   └── globals.css       # Global styles
+├── public/               # Static assets
+├── lib/                  # Utility functions
+├── .github/workflows/    # GitHub Actions
+└── next.config.mjs      # Next.js configuration
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 📚 Additional Resources
 
-## Deploy on Vercel
+- [Next.js Documentation](https://nextjs.org/docs)
+- [GitHub Actions Documentation](https://docs.github.com/en/actions)
+- [PM2 Documentation](https://pm2.keymetrics.io/docs/)
+- [Hostinger VPS Guide](https://www.hostinger.com/tutorials/vps)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔍 Monitoring & Troubleshooting
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Check Deployment Status
+- **GitHub Actions**: Check the Actions tab in GitHub repository
+- **VPS Status**: SSH into VPS and run `pm2 status`
+- **Logs**: View PM2 logs with `pm2 logs techmapperz`
+
+### Common Issues
+- **Build Failures**: Check GitHub Actions logs
+- **Deployment Errors**: Verify GitHub secrets configuration
+- **VPS Issues**: Check PM2 process status and logs
