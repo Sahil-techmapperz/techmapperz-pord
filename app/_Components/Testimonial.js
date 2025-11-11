@@ -4,13 +4,26 @@ import CarouselWrapper from './CarouselWrapper';
 
 async function getTestimonials() {
   try {
-    const url = `${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/Testimonial`;
+    const baseUrl = process.env.NEXT_PUBLIC_BACKEND_BASE_URL;
+    
+    // Return empty array if no base URL is configured
+    if (!baseUrl || baseUrl === 'undefined') {
+      console.warn('NEXT_PUBLIC_BACKEND_BASE_URL not configured, returning empty testimonial data');
+      return [];
+    }
+
+    const url = `${baseUrl}/Testimonial`;
+    console.log('Fetching testimonials from:', url);
+    
     const response = await axios.get(url, {
       headers: {
         "Content-Type": "application/json",
       },
     });
-    return response.data;
+
+    // Ensure we return an array
+    const data = response.data;
+    return Array.isArray(data) ? data : (data?.data && Array.isArray(data.data)) ? data.data : [];
   } catch (error) {
     console.error("Error fetching testimonials:", error);
     return [];
@@ -19,6 +32,9 @@ async function getTestimonials() {
 
 const Testimonial = async () => {
   const testimonials = await getTestimonials();
+
+  // Ensure testimonials is always an array
+  const safeTestimonials = Array.isArray(testimonials) ? testimonials : [];
 
   const responsive = {
     desktop: {
@@ -46,7 +62,7 @@ const Testimonial = async () => {
 
       <div className="w-full max-w-[1600px] mx-auto p-12 max-sm:px-2">
         <CarouselWrapper responsive={responsive}>
-          {testimonials.map((data, index) => (
+          {safeTestimonials.length > 0 ? safeTestimonials.map((data, index) => (
             <div
               key={index}
               className="bg-[#1C1C1C] text-white p-8 rounded-lg shadow-lg mx-4 min-h-[300px] flex flex-col"
@@ -81,7 +97,11 @@ const Testimonial = async () => {
                 </div>
               </div>
             </div>
-          ))}
+          )) : (
+            <div className="bg-[#1C1C1C] text-white p-8 rounded-lg shadow-lg mx-4 min-h-[300px] flex flex-col justify-center items-center">
+              <p className="text-lg text-gray-400">No testimonials available at the moment.</p>
+            </div>
+          )}
         </CarouselWrapper>
       </div>
     </div>

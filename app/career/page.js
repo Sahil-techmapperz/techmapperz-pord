@@ -19,7 +19,14 @@ export const metadata = {
 };
 
 const Career = async () => {
-  const Jobsdata = await getJobsdata();
+  const jobsResponse = await getJobsdata();
+  
+  // Handle the response structure and ensure we have an array
+  const Jobsdata = Array.isArray(jobsResponse) 
+    ? jobsResponse 
+    : (jobsResponse?.data && Array.isArray(jobsResponse.data)) 
+      ? jobsResponse.data 
+      : [];
 
   return (
     <div className="bg-black text-white">
@@ -102,7 +109,7 @@ const Career = async () => {
             {
               img: "/Photos/career_idea_4.webp",
               title: "Grow unhindered",
-              desc: "The world is a digital canvas evolving every day. You’ll have the opportunity to develop and execute new ideas, shaping a better digital future.",
+              desc: "The world is a digital canvas evolving every day. You'll have the opportunity to develop and execute new ideas, shaping a better digital future.",
             },
             {
               img: "/Photos/career_idea_5.webp",
@@ -131,9 +138,16 @@ const Career = async () => {
 
       <div id="jobs">
         <h1 className="text-center text-[30px] font-[600]">Current Opening Position</h1>
-        {Jobsdata.map((job) => {
-          return <JobCard key={job.userId} job={job} />
-        })}
+        {Jobsdata && Jobsdata.length > 0 ? (
+          Jobsdata.map((job) => {
+            return <JobCard key={job.userId || job.id || Math.random()} job={job} />
+          })
+        ) : (
+          <div className="text-center py-8">
+            <p className="text-xl text-gray-300">No job openings available at the moment.</p>
+            <p className="text-md text-gray-400 mt-2">Please check back later for new opportunities!</p>
+          </div>
+        )}
       </div>
 
       {/* <JoinUs Jobsdata={Jobsdata} /> */}
