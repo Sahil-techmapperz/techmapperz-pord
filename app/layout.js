@@ -1,4 +1,5 @@
 import { Poppins } from 'next/font/google';
+import CriticalCSS from './_Components/CriticalCSS';
 import "./globals.css";
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
@@ -248,6 +249,7 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className={montserrat.variable}>
+        <CriticalCSS />
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <Navbar />
         <main id="main-content" role="main">{children}</main>

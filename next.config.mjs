@@ -8,6 +8,17 @@ const nextConfig = {
       ignoreDuringBuilds: false,
     },
     
+    // Performance optimizations
+    swcMinify: true,
+    compress: true,
+    poweredByHeader: false,
+    
+    // Experimental features for better performance
+    experimental: {
+      optimizeCss: true,
+      scrollRestoration: true,
+    },
+    
     // Environment variable validation
     env: {
       NEXT_PUBLIC_BACKEND_BASE_URL: process.env.NEXT_PUBLIC_BACKEND_BASE_URL,

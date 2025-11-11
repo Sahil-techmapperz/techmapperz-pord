@@ -1,15 +1,15 @@
 import ScrollToTop from './_Components/ScrollToTop';
 import dynamic from 'next/dynamic';
 
-// Critical above-the-fold components - load immediately for mobile performance
-const CustomCarousel = dynamic(() => import('./_Components/HomeCarousel'), {
+// Critical above-the-fold components - optimized for performance
+const OptimizedHomeCarousel = dynamic(() => import('./_Components/OptimizedHomeCarousel'), {
   ssr: true, // Enable SSR for critical above-the-fold content
   loading: () => (
-    <div className="h-[400px] md:h-[600px] bg-gradient-to-br from-gray-900 to-black animate-pulse">
+    <div className="h-[90vh] bg-black animate-pulse">
       <div className="flex items-center justify-center h-full">
         <div className="text-center space-y-4">
-          <div className="h-12 bg-gray-800 rounded w-96 mx-auto"></div>
-          <div className="h-6 bg-gray-700 rounded w-64 mx-auto"></div>
+          <div className="h-8 bg-gray-800 rounded w-64 mx-auto"></div>
+          <div className="h-4 bg-gray-700 rounded w-48 mx-auto"></div>
         </div>
       </div>
     </div>
@@ -191,7 +191,7 @@ const Home = () => {
   return (
     <div>
       <ScrollToTop />
-      <CustomCarousel />
+      <OptimizedHomeCarousel />
       <section className="bg-black pt-8 max-sm:py-2 max-sm:px-4 px-[4rem] relative overflow-x-hidden w-full ">
         <div className="grid grid-cols-1 m-auto">
           <div className="flex flex-col items-center">
