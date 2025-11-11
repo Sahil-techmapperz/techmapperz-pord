@@ -29,6 +29,21 @@ jobs:
       
     - name: Build project
       run: npm run build
+      env:
+        NEXT_PUBLIC_BACKEND_BASE_URL: ${{ secrets.NEXT_PUBLIC_BACKEND_BASE_URL }}
+        NEXT_PUBLIC_Site_URL: ${{ secrets.NEXT_PUBLIC_Site_URL }}
+        NODE_ENV: production
+
+    - name: Upload build files to VPS
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.VPS_HOST }}
+        username: ${{ secrets.VPS_USERNAME }}
+        password: ${{ secrets.VPS_PASSWORD }}
+        port: ${{ secrets.VPS_PORT }}
+        source: ".next,package.json,package-lock.json"
+        target: "/root/techmapperz-pord/"
+        overwrite: true
       
     - name: Deploy to VPS
       uses: appleboy/ssh-action@v1.0.3
@@ -72,33 +87,15 @@ jobs:
           export NODE_ENV=production
           export NODE_OPTIONS="--max-old-space-size=1536"
           
-          # Install dependencies (including dev dependencies for build)
-          npm ci --silent
+          # Install production dependencies only (no build needed - GitHub already built)
+          npm ci --production --silent
           
-          # Build the application with proper error handling and memory management
-          echo "Starting build process with memory optimization..."
+          echo "✅ Using pre-built application from GitHub Actions"
           
-          # First try with moderate memory
-          export NODE_OPTIONS="--max-old-space-size=2048"
-          if timeout 1200 npm run build; then
-            echo "✅ Build completed successfully"
-          else
-            echo "❌ Build failed, trying with maximum memory..."
-            export NODE_OPTIONS="--max-old-space-size=3072"
-            if timeout 1800 npm run build; then
-              echo "✅ Build completed with increased memory"
-            else
-              echo "❌ Build failed completely. Checking VPS resources..."
-              free -h
-              df -h
-              echo "❌ Deployment aborted - build cannot complete."
-              exit 1
-            fi
-          fi
-          
-          # Verify build exists
+          # Verify build exists (should be included from GitHub Actions)
           if [ ! -d ".next" ]; then
-            echo "❌ .next directory not found after build. Build failed."
+            echo "❌ .next directory not found. Build should be included in repository."
+            echo "Make sure GitHub Actions build step completed successfully."
             exit 1
           fi
           
