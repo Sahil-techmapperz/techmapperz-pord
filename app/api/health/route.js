@@ -1,0 +1,40 @@
+// Health check API endpoint
+import { NextResponse } from 'next/server';
+
+export async function GET() {
+  try {
+    // Basic health checks
+    const healthData = {
+      status: 'healthy',
+      timestamp: new Date().toISOString(),
+      uptime: process.uptime(),
+      environment: process.env.NODE_ENV || 'development',
+      version: process.env.npm_package_version || '1.0.0',
+      memory: {
+        used: Math.round(process.memoryUsage().heapUsed / 1024 / 1024),
+        total: Math.round(process.memoryUsage().heapTotal / 1024 / 1024),
+        external: Math.round(process.memoryUsage().external / 1024 / 1024)
+      },
+      checks: {
+        database: 'not_configured', // Add your database check here
+        external_apis: 'not_configured' // Add external API checks here
+      }
+    };
+
+    return NextResponse.json(healthData, { status: 200 });
+  } catch (error) {
+    return NextResponse.json(
+      { 
+        status: 'unhealthy', 
+        error: error.message,
+        timestamp: new Date().toISOString()
+      }, 
+      { status: 500 }
+    );
+  }
+}
+
+export async function HEAD() {
+  // Simple HEAD request for load balancer health checks
+  return new NextResponse(null, { status: 200 });
+}

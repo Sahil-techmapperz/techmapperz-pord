@@ -1,0 +1,56 @@
+name: Deploy to Hostinger VPS
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build project
+      run: npm run build
+      
+    - name: Deploy to VPS
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.VPS_HOST }}
+        username: ${{ secrets.VPS_USERNAME }}
+        password: ${{ secrets.VPS_PASSWORD }}
+        port: ${{ secrets.VPS_PORT }}
+        script: |
+          cd /root/techmapperz-pord
+          git pull origin main
+          
+          # Create .env file with environment variables
+          cat > .env << EOF
+          NEXT_PUBLIC_BACKEND_BASE_URL=${{ secrets.NEXT_PUBLIC_BACKEND_BASE_URL }}
+          NEXT_PUBLIC_Site_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          NODE_ENV=production
+          PORT=3000
+          EOF
+          
+          export NODE_OPTIONS="--max-old-space-size=1536"
+          npm ci --production --silent
+          timeout 600 npm run build || (echo "Build timed out, trying with more memory..." && NODE_OPTIONS="--max-old-space-size=2048" timeout 900 npm run build)
+          pm2 restart techmapperz 2>/dev/null || pm2 start npm --name "techmapperz" -- start
+          echo "Deployment completed successfully!"

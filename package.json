@@ -1,0 +1,52 @@
+{
+  "name": "nextjs_techmapperz",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "NODE_OPTIONS='--max-old-space-size=1536' next build",
+    "build:production": "NODE_OPTIONS='--max-old-space-size=2048' next build",
+    "start": "next start",
+    "lint": "next lint",
+    "health-check": "node health-check.js",
+    "deploy": "./deploy.sh",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:stop": "pm2 stop ecosystem.config.js",
+    "pm2:restart": "pm2 restart ecosystem.config.js",
+    "pm2:logs": "pm2 logs techmapperz"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@react-three/drei": "^9.121.4",
+    "@react-three/fiber": "^8.17.12",
+    "aos": "^2.3.4",
+    "axios": "^1.7.2",
+    "cwebp": "^3.2.0",
+    "framer-motion": "^11.3.19",
+    "lucide-react": "^0.553.0",
+    "moment": "^2.30.1",
+    "next": "^14.2.16",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-error-boundary": "^5.0.0",
+    "react-icons": "^5.2.1",
+    "react-intersection-observer": "^9.13.0",
+    "react-multi-carousel": "^2.8.5",
+    "react-responsive-carousel": "^3.2.23",
+    "react-slick": "^0.30.2",
+    "react-tooltip": "^5.28.0",
+    "react-type-animation": "^3.2.0",
+    "sharp": "^0.33.5",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^11.1.14",
+    "tailwind-scrollbar": "^3.1.0",
+    "three": "^0.172.0"
+  },
+  "devDependencies": {
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
