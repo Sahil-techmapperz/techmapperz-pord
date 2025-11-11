@@ -38,8 +38,25 @@ jobs:
         password: ${{ secrets.VPS_PASSWORD }}
         port: ${{ secrets.VPS_PORT }}
         script: |
+          cd /root
+          
+          # Check if project directory exists, if not clone it
+          if [ ! -d "techmapperz-pord" ]; then
+            echo "Project directory not found. Cloning repository..."
+            git clone https://github.com/Sahil-techmapperz/techmapperz-pord.git
+          else
+            echo "Project directory exists. Pulling latest changes..."
+            cd techmapperz-pord
+            git pull origin main || {
+              echo "Git pull failed. Re-cloning repository..."
+              cd /root
+              rm -rf techmapperz-pord
+              git clone https://github.com/Sahil-techmapperz/techmapperz-pord.git
+            }
+          fi
+          
+          # Navigate to project directory
           cd /root/techmapperz-pord
-          git pull origin main
           
           # Create .env file with environment variables
           cat > .env << EOF
@@ -55,7 +72,15 @@ jobs:
           export NODE_ENV=production
           export NODE_OPTIONS="--max-old-space-size=1536"
           
+          # Install dependencies and build
           npm ci --production --silent
           timeout 600 npm run build || (echo "Build timed out, trying with more memory..." && NODE_OPTIONS="--max-old-space-size=2048" timeout 900 npm run build)
-          pm2 restart techmapperz 2>/dev/null || pm2 start npm --name "techmapperz" -- start
+          
+          # Stop existing PM2 process and start new one
+          pm2 stop techmapperz 2>/dev/null || echo "No existing process to stop"
+          pm2 delete techmapperz 2>/dev/null || echo "No existing process to delete"
+          pm2 start npm --name "techmapperz" -- start
+          pm2 save
+          
           echo "Deployment completed successfully!"
+          pm2 status
