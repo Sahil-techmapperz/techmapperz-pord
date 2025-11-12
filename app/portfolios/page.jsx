@@ -1,5 +1,5 @@
 import Casestudies from './client-page';
-import { enhancedPortfolioData } from './enhancedPortfolioData';
+import enhancedPortfolioData from './PortfolioData';
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://techmapperz.com"; // Fallback URL
 export const metadata = {
   title: 'Our Work Portfolio | IT, GIS & Drone Projects | Techmapperz',

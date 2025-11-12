@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import PortfolioDetailTemplate from '../PortfolioDetailTemplate';
-import { enhancedPortfolioData } from '../enhancedPortfolioData';
+import enhancedPortfolioData from '../PortfolioData';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://techmapperz.com";
 

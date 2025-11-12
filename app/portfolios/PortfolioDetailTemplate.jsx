@@ -92,9 +92,15 @@ export default function PortfolioDetailTemplate({
 
   // Extract data from portfolioItem (dynamic data structure)
   const techStackArray = portfolioItem.techStack ? portfolioItem.techStack.split(',').map(tech => tech.trim()) : [];
-  const challenges = portfolioItem.challenges || [];
+  
+  // Handle different data structures for GIS vs IT portfolios
+  const challenges = portfolioItem.category === "GIS" 
+    ? (portfolioItem.objectives || []) 
+    : (portfolioItem.challenges || []);
   const solutions = portfolioItem.solutions || [];
-  const results = portfolioItem.results || [];
+  const results = portfolioItem.category === "GIS" 
+    ? (portfolioItem.benefits || []) 
+    : (portfolioItem.results || []);
   const conclusion = portfolioItem.conclusion || "";
   const projectDetails = portfolioItem.projectDetails || {};
   const testimonial = portfolioItem.testimonial || null;
@@ -161,44 +167,7 @@ export default function PortfolioDetailTemplate({
                 </p>
               </div>
 
-              {/* Key Metrics */}
-              <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
-                <div className="rounded-2xl border border-gray-600 bg-gray-800/50 backdrop-blur-sm p-4 hover:bg-gray-700/50 transition-all duration-300">
-                  <div className="flex items-center gap-3">
-                    <div className="flex size-10 items-center justify-center rounded-xl bg-green-500/20 text-green-400">
-                      <CheckCircle2 size={20} />
-                    </div>
-                    <div>
-                      <div className="text-lg font-bold text-white">Completed</div>
-                      <div className="text-xs text-gray-400">Status</div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="rounded-2xl border border-gray-600 bg-gray-800/50 backdrop-blur-sm p-4 hover:bg-gray-700/50 transition-all duration-300">
-                  <div className="flex items-center gap-3">
-                    <div className="flex size-10 items-center justify-center rounded-xl bg-[#00B0FE]/20 text-[#00B0FE]">
-                      <Users size={20} />
-                    </div>
-                    <div>
-                      <div className="text-lg font-bold text-white">5.0/5</div>
-                      <div className="text-xs text-gray-400">Client Rating</div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="rounded-2xl border border-gray-600 bg-gray-800/50 backdrop-blur-sm p-4 hover:bg-gray-700/50 transition-all duration-300 col-span-2 lg:col-span-1">
-                  <div className="flex items-center gap-3">
-                    <div className="flex size-10 items-center justify-center rounded-xl bg-yellow-500/20 text-yellow-400">
-                      <Award size={20} />
-                    </div>
-                    <div>
-                      <div className="text-lg font-bold text-white">Premium</div>
-                      <div className="text-xs text-gray-400">Quality</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
 
               {/* Technology Stack Preview */}
               <div className="space-y-4">
@@ -285,9 +254,13 @@ export default function PortfolioDetailTemplate({
         </div>
       </header>
 
-      {/* Challenges Section */}
+      {/* Challenges/Objectives Section */}
       {challenges.length > 0 && (
-        <Section icon={<Target size={24} />} title="Challenges" background>
+        <Section 
+          icon={<Target size={24} />} 
+          title={portfolioItem.category === "GIS" ? "Objectives" : "Challenges"} 
+          background
+        >
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {challenges.map((challenge, index) => (
               <div key={index} className="rounded-2xl border border-gray-600 bg-gray-800 p-6">
@@ -338,9 +311,13 @@ export default function PortfolioDetailTemplate({
         </Section>
       )}
 
-      {/* Results Section */}
+      {/* Results/Benefits Section */}
       {results.length > 0 && (
-        <Section icon={<TrendingUp size={24} />} title="Results & Impact" background>
+        <Section 
+          icon={<TrendingUp size={24} />} 
+          title={portfolioItem.category === "GIS" ? "Benefits" : "Results & Impact"} 
+          background
+        >
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {results.map((result, index) => (
               <Metric
@@ -356,21 +333,23 @@ export default function PortfolioDetailTemplate({
       )}
 
       {/* Technology Deep Dive */}
-      <Section icon={<Rocket size={24} />} title="Technology Stack">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {techStackArray.map((tech, index) => (
-            <div key={index} className="rounded-2xl border border-gray-600 bg-gray-800 p-4 text-center">
-              <div className="mx-auto mb-3 h-12 w-12 rounded-xl bg-[#00B0FE]/20 flex items-center justify-center">
-                <span className="text-lg font-bold text-[#00B0FE]">{tech.charAt(0)}</span>
+      {portfolioItem.category !== "GIS" && (
+        <Section icon={<Rocket size={24} />} title="Technology Stack">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {techStackArray.map((tech, index) => (
+              <div key={index} className="rounded-2xl border border-gray-600 bg-gray-800 p-4 text-center">
+                <div className="mx-auto mb-3 h-12 w-12 rounded-xl bg-[#00B0FE]/20 flex items-center justify-center">
+                  <span className="text-lg font-bold text-[#00B0FE]">{tech.charAt(0)}</span>
+                </div>
+                <h3 className="text-sm font-semibold text-white">{tech}</h3>
               </div>
-              <h3 className="text-sm font-semibold text-white">{tech}</h3>
-            </div>
-          ))}
-        </div>
-      </Section>
+            ))}
+          </div>
+        </Section>
+      )}
 
       {/* Conclusion */}
-      {conclusion && (
+      {conclusion && portfolioItem.category !== "GIS" && (
         <Section icon={<Award size={24} />} title="Project Conclusion" background>
           <div className="mx-auto max-w-4xl rounded-2xl border border-gray-600 bg-gray-800 p-8 text-center">
             <p className="text-lg text-gray-300">{conclusion}</p>
@@ -379,7 +358,7 @@ export default function PortfolioDetailTemplate({
       )}
 
       {/* Testimonial */}
-      {testimonial && (
+      {testimonial && portfolioItem.category !== "GIS" && (
         <Section icon={<Users size={24} />} title="Client Feedback">
           <div className="mx-auto max-w-4xl rounded-2xl border border-gray-600 bg-gray-800 p-8">
             <blockquote className="text-center">

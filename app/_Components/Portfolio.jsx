@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import HoverButton from './ExpandButton'
 import { useState, useEffect } from 'react'
-import { enhancedPortfolioData } from '../portfolios/enhancedPortfolioData'
+import enhancedPortfolioData from '../portfolios/PortfolioData'
 
 // Get featured projects from enhanced data (first 3 projects for home page)
 const getFeaturedProjects = () => {
