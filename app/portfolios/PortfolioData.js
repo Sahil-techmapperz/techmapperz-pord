@@ -8,7 +8,7 @@ const itPortfolioData = [
         image: "/Photos/Welho_banner.webp",
         category: "IT",
         techStack: "React, Node.js, PostgreSQL, Express, Material-UI, PayPal, Shopify API",
-        name: "Welho - Health & Wellness E-commerce",
+        name: "Welho - Food E-commerce  Site",
         link: "/portfolios/welho",
         slug: "welho",
         details: [
@@ -95,7 +95,7 @@ const itPortfolioData = [
         image: "/Photos/whitespreadfoods_banner.webp",
         category: "IT",
         techStack: "React, Node.js, MongoDB, Express, Chart.js, D3.js, Python",
-        name: "White Spread Foods - Business Intelligence Dashboard",
+        name: "White Spread Foods – Dairy Sales Dashboard",
         link: "/portfolios/white-spread-foods",
         slug: "white-spread-foods",
         details: [
@@ -182,7 +182,7 @@ const itPortfolioData = [
         image: "/Photos/manuser-ghorbaari1.webp",
         category: "IT",
         techStack: "React, Node.js, MySQL, Express, Booking Engine, Payment Gateway, Maps API",
-        name: "Manusher Ghorbari - Hotel Booking Platform",
+        name: "Manusher Ghorbari - Booking Platform",
         link: "/portfolios/manusher-ghorbari",
         slug: "manusher-ghorbari",
         details: [

@@ -117,11 +117,11 @@ const Portfolio = ({ projects = null, showAll = false }) => {
                                             }`}>
                                                 {project.category === 'IT' ? '💻' : '🗺️'} {project.category}
                                             </span>
-                                            {project.year && (
+                                            {/* {project.year && (
                                                 <span className="inline-flex items-center gap-1 rounded-full border border-gray-600 bg-gray-700 px-3 py-1 text-xs font-medium text-gray-300">
                                                     📅 {project.year}
                                                 </span>
-                                            )}
+                                            )} */}
                                         </div>
 
                                         {/* Project Title */}
