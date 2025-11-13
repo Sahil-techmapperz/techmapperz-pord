@@ -137,20 +137,20 @@ export default function PortfolioDetailTemplate({
                     <Building2 className="h-4 w-4" />
                     {portfolioItem.category} Project
                   </Badge>
-                  <Badge>
+                  {/* <Badge>
                     <Calendar className="h-4 w-4" />
                     {projectDetails.year || "2024"}
                   </Badge>
                   <Badge>
                     <MapPin className="h-4 w-4" />
                     {projectDetails.location || "India"}
-                  </Badge>
-                  {projectDetails.duration && (
+                  </Badge> */}
+                  {/* {projectDetails.duration && (
                     <Badge>
                       <Gauge className="h-4 w-4" />
                       {projectDetails.duration}
                     </Badge>
-                  )}
+                  )} */}
                 </div>
               </div>
 
@@ -171,7 +171,7 @@ export default function PortfolioDetailTemplate({
 
               {/* Technology Stack Preview */}
               <div className="space-y-4">
-                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wide">Technology Stack</h3>
+                {/* <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wide">Technology Stack</h3> */}
                 <div className="flex flex-wrap gap-2">
                   {techStackArray.slice(0, 4).map((tech, index) => (
                     <div key={index} className="rounded-xl border border-gray-600 bg-gray-800/70 px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white transition-all duration-300">
@@ -229,9 +229,9 @@ export default function PortfolioDetailTemplate({
                       <div className="size-3 rounded-full bg-green-400 animate-pulse"></div>
                       <span className="text-sm font-medium text-gray-300">Live Project</span>
                     </div>
-                    <p className="text-xs text-gray-400">
+                    {/* <p className="text-xs text-gray-400">
                       {projectDetails.teamSize ? `Team: ${projectDetails.teamSize}` : 'Professional Team'}
-                    </p>
+                    </p> */}
                     <p className="text-xs text-gray-400">
                       {projectDetails.industry || 'Enterprise Solution'}
                     </p>

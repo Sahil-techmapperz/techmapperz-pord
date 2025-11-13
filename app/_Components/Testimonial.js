@@ -1,11 +1,12 @@
 import axios from "axios";
 import { FaStar, FaCheckCircle } from 'react-icons/fa';
 import CarouselWrapper from './CarouselWrapper';
+import MessageTooltip from "./MessageTooltip";
 
 async function getTestimonials() {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_BACKEND_BASE_URL;
-    
+
     // Return empty array if no base URL is configured
     if (!baseUrl || baseUrl === 'undefined') {
       console.warn('NEXT_PUBLIC_BACKEND_BASE_URL not configured, returning empty testimonial data');
@@ -14,7 +15,7 @@ async function getTestimonials() {
 
     const url = `${baseUrl}/Testimonial`;
     console.log('Fetching testimonials from:', url);
-    
+
     const response = await axios.get(url, {
       headers: {
         "Content-Type": "application/json",
@@ -77,12 +78,10 @@ const Testimonial = async () => {
               </div>
 
               <div className="tooltip w-full flex-grow">
-                <p className="text-base text-start leading-relaxed"  >
-                  {data.message.length > 200
-                    ? `${data.message.substring(0, 200)}...`
-                    : data.message}
+                <p className="text-base text-start leading-relaxed">
+                  <MessageTooltip message={data.message} />
                 </p>
-                
+
               </div>
 
               <div className="mt-6">

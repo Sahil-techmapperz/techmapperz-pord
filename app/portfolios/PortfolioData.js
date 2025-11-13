@@ -2,267 +2,8 @@
 
 // IT Portfolio Data Structure
 const itPortfolioData = [
-    {
-        image: "/Photos/IT_1.webp",
-        category: "IT",
-        techStack: "React, Node.js, MongoDB, Express, Material-UI, Redux, Socket.io",
-        name: "Fabcon - Interior Design Mobile App",
-        link: "/portfolios/fabcon",
-        slug: "fabcon",
-        details: [
-            "A comprehensive interior design mobile application that connects customers with professional designers and vendors. The platform streamlines the entire interior design process from consultation to project completion."
-        ],
-        projectDetails: {
-            year: "2023",
-            location: "Mumbai, India",
-            duration: "8 months",
-            teamSize: "12 developers",
-            industry: "Interior Design",
-            projectType: "Mobile Application"
-        },
-        challenges: [
-            {
-                title: "Complex User Journey Management",
-                description: "Managing multiple user types (customers, designers, vendors) with different needs and workflows within a single platform."
-            },
-            {
-                title: "Real-time Collaboration Features",
-                description: "Implementing seamless real-time communication and project tracking between customers, designers, and vendors."
-            },
-            {
-                title: "Scalable Architecture Design",
-                description: "Creating a robust backend architecture that could handle growing user base and complex business logic."
-            }
-        ],
-        solutions: [
-            {
-                title: "Multi-Role Dashboard System",
-                description: "Developed comprehensive role-based dashboards with customized interfaces for each user type.",
-                features: [
-                    "Customer project management interface",
-                    "Designer portfolio and project tools",
-                    "Vendor inventory and order management",
-                    "Admin oversight and analytics dashboard"
-                ]
-            },
-            {
-                title: "Real-Time Communication Hub",
-                description: "Integrated Socket.io for instant messaging, project updates, and collaborative design sessions.",
-                features: [
-                    "Instant messaging system",
-                    "File sharing and collaboration",
-                    "Real-time project status updates",
-                    "Push notifications for important events"
-                ]
-            }
-        ],
-        results: [
-            {
-                label: "User Acquisition",
-                value: "10,000+",
-                description: "Active users within first 6 months",
-                icon: "👥"
-            },
-            {
-                label: "Project Completion Rate",
-                value: "95%",
-                description: "Successful project completion through platform",
-                icon: "✅"
-            },
-            {
-                label: "Response Time",
-                value: "<2s",
-                description: "Average API response time optimization",
-                icon: "⚡"
-            },
-            {
-                label: "User Satisfaction",
-                value: "4.8/5",
-                description: "Average rating from customer feedback",
-                icon: "⭐"
-            }
-        ],
-        conclusion: "The Fabcon mobile application successfully revolutionized the interior design industry workflow by creating a unified platform that seamlessly connects all stakeholders.",
-        testimonial: {
-            quote: "Techmapperz delivered exactly what we envisioned and more. The app has transformed how we manage our interior design projects and communicate with clients.",
-            author: "Rajesh Sharma",
-            position: "CEO, Fabcon"
-        }
-    },
-    {
-        image: "/Photos/shrc_banner.webp",
-        category: "IT",
-        techStack: "React, Node.js, MySQL, Express, Bootstrap, JWT, Payment Gateway",
-        name: "SHRC - Welfare Society Platform",
-        link: "/portfolios/shrc",
-        slug: "shrc",
-        details: [
-            "A comprehensive welfare society management platform designed to streamline operations, member management, and community services for social welfare organizations."
-        ],
-        projectDetails: {
-            year: "2023",
-            location: "Delhi, India",
-            duration: "10 months",
-            teamSize: "15 developers",
-            industry: "Social Welfare",
-            projectType: "Web Application Platform"
-        },
-        challenges: [
-            {
-                title: "Member Management Complexity",
-                description: "Managing large numbers of members with different categories, benefits, and service requirements."
-            },
-            {
-                title: "Multi-Service Integration",
-                description: "Integrating various welfare services like healthcare, education, and financial aid into a single platform."
-            },
-            {
-                title: "Transparent Operations",
-                description: "Ensuring transparency in fund management and service delivery to maintain trust and accountability."
-            }
-        ],
-        solutions: [
-            {
-                title: "Comprehensive Member Management System",
-                description: "Developed a robust member registration and management system with category-wise benefits tracking.",
-                features: [
-                    "Member registration and verification",
-                    "Category-based benefit allocation",
-                    "Service request tracking",
-                    "Communication portal"
-                ]
-            },
-            {
-                title: "Integrated Service Platform",
-                description: "Created a unified platform for all welfare services with automated workflows and approval processes.",
-                features: [
-                    "Healthcare service booking",
-                    "Education program enrollment",
-                    "Financial aid applications",
-                    "Community event management"
-                ]
-            }
-        ],
-        results: [
-            {
-                label: "Member Enrollment",
-                value: "25,000+",
-                description: "Active members registered on platform",
-                icon: "👥"
-            },
-            {
-                label: "Service Efficiency",
-                value: "+60%",
-                description: "Improvement in service delivery time",
-                icon: "⚡"
-            },
-            {
-                label: "Transparency Score",
-                value: "4.9/5",
-                description: "Member satisfaction with transparency",
-                icon: "🌟"
-            },
-            {
-                label: "Cost Reduction",
-                value: "-35%",
-                description: "Reduction in administrative costs",
-                icon: "💰"
-            }
-        ],
-        conclusion: "The SHRC platform successfully digitized welfare society operations, improving efficiency and transparency while serving thousands of community members effectively.",
-        testimonial: {
-            quote: "This platform has transformed our ability to serve our community efficiently and transparently. The impact has been remarkable.",
-            author: "Dr. Priya Sharma",
-            position: "Director, SHRC"
-        }
-    },
-    {
-        image: "/Photos/premierautosource_banner.webp",
-        category: "IT",
-        techStack: "React, Node.js, MongoDB, Express, Redux, Stripe, AWS",
-        name: "PAS Auto Source - Automotive Platform",
-        link: "/portfolios/pas-auto-source",
-        slug: "pas-auto-source",
-        details: [
-            "A comprehensive automotive marketplace platform connecting buyers, sellers, and service providers in the automotive industry with features for vehicle listings, financing, and service management."
-        ],
-        projectDetails: {
-            year: "2023",
-            location: "Chicago, USA",
-            duration: "12 months",
-            teamSize: "18 developers",
-            industry: "Automotive",
-            projectType: "E-commerce Platform"
-        },
-        challenges: [
-            {
-                title: "Multi-Vendor Marketplace",
-                description: "Creating a platform that accommodates multiple dealers, private sellers, and service providers with different needs."
-            },
-            {
-                title: "Vehicle Verification System",
-                description: "Implementing robust vehicle verification and history reporting to ensure buyer confidence."
-            },
-            {
-                title: "Integrated Financial Services",
-                description: "Integrating loan and insurance services seamlessly into the buying process."
-            }
-        ],
-        solutions: [
-            {
-                title: "Advanced Marketplace Architecture",
-                description: "Built a scalable multi-vendor platform with separate dashboards for different user types.",
-                features: [
-                    "Dealer management portal",
-                    "Private seller interface",
-                    "Service provider dashboard",
-                    "Advanced search and filtering"
-                ]
-            },
-            {
-                title: "Vehicle Verification Engine",
-                description: "Developed comprehensive vehicle verification system with history reports and inspection scheduling.",
-                features: [
-                    "VIN-based verification",
-                    "Vehicle history reports",
-                    "Inspection scheduling",
-                    "Quality assurance protocols"
-                ]
-            }
-        ],
-        results: [
-            {
-                label: "Active Listings",
-                value: "15,000+",
-                description: "Vehicles listed on the platform",
-                icon: "🚗"
-            },
-            {
-                label: "Transaction Volume",
-                value: "$50M+",
-                description: "Total transaction value processed",
-                icon: "💵"
-            },
-            {
-                label: "User Satisfaction",
-                value: "4.7/5",
-                description: "Average user rating",
-                icon: "⭐"
-            },
-            {
-                label: "Platform Growth",
-                value: "+200%",
-                description: "Year-over-year user growth",
-                icon: "📈"
-            }
-        ],
-        conclusion: "PAS Auto Source successfully created a trusted automotive marketplace that streamlined the buying and selling process while maintaining high quality standards.",
-        testimonial: {
-            quote: "Techmapperz delivered a platform that exceeded our expectations. Our business has grown exponentially since launch.",
-            author: "Mike Rodriguez",
-            position: "CEO, Premier Auto Source"
-        }
-    },
+
+
     {
         image: "/Photos/welho_banner.webp",
         category: "IT",
@@ -525,6 +266,268 @@ const itPortfolioData = [
         }
     },
     {
+        image: "/Photos/shrc_banner.webp",
+        category: "IT",
+        techStack: "React, Node.js, MySQL, Express, Bootstrap, JWT, Payment Gateway",
+        name: "SHRC - Welfare Society Platform",
+        link: "/portfolios/shrc",
+        slug: "shrc",
+        details: [
+            "A comprehensive welfare society management platform designed to streamline operations, member management, and community services for social welfare organizations."
+        ],
+        projectDetails: {
+            year: "2023",
+            location: "Delhi, India",
+            duration: "10 months",
+            teamSize: "15 developers",
+            industry: "Social Welfare",
+            projectType: "Web Application Platform"
+        },
+        challenges: [
+            {
+                title: "Member Management Complexity",
+                description: "Managing large numbers of members with different categories, benefits, and service requirements."
+            },
+            {
+                title: "Multi-Service Integration",
+                description: "Integrating various welfare services like healthcare, education, and financial aid into a single platform."
+            },
+            {
+                title: "Transparent Operations",
+                description: "Ensuring transparency in fund management and service delivery to maintain trust and accountability."
+            }
+        ],
+        solutions: [
+            {
+                title: "Comprehensive Member Management System",
+                description: "Developed a robust member registration and management system with category-wise benefits tracking.",
+                features: [
+                    "Member registration and verification",
+                    "Category-based benefit allocation",
+                    "Service request tracking",
+                    "Communication portal"
+                ]
+            },
+            {
+                title: "Integrated Service Platform",
+                description: "Created a unified platform for all welfare services with automated workflows and approval processes.",
+                features: [
+                    "Healthcare service booking",
+                    "Education program enrollment",
+                    "Financial aid applications",
+                    "Community event management"
+                ]
+            }
+        ],
+        results: [
+            {
+                label: "Member Enrollment",
+                value: "25,000+",
+                description: "Active members registered on platform",
+                icon: "👥"
+            },
+            {
+                label: "Service Efficiency",
+                value: "+60%",
+                description: "Improvement in service delivery time",
+                icon: "⚡"
+            },
+            {
+                label: "Transparency Score",
+                value: "4.9/5",
+                description: "Member satisfaction with transparency",
+                icon: "🌟"
+            },
+            {
+                label: "Cost Reduction",
+                value: "-35%",
+                description: "Reduction in administrative costs",
+                icon: "💰"
+            }
+        ],
+        conclusion: "The SHRC platform successfully digitized welfare society operations, improving efficiency and transparency while serving thousands of community members effectively.",
+        testimonial: {
+            quote: "This platform has transformed our ability to serve our community efficiently and transparently. The impact has been remarkable.",
+            author: "Dr. Priya Sharma",
+            position: "Director, SHRC"
+        }
+    },
+    {
+        image: "/Photos/premierautosource_banner.webp",
+        category: "IT",
+        techStack: "React, Node.js, MongoDB, Express, Redux, Stripe, AWS",
+        name: "PAS Auto Source - Automotive Platform",
+        link: "/portfolios/pas-auto-source",
+        slug: "pas-auto-source",
+        details: [
+            "A comprehensive automotive marketplace platform connecting buyers, sellers, and service providers in the automotive industry with features for vehicle listings, financing, and service management."
+        ],
+        projectDetails: {
+            year: "2023",
+            location: "Chicago, USA",
+            duration: "12 months",
+            teamSize: "18 developers",
+            industry: "Automotive",
+            projectType: "E-commerce Platform"
+        },
+        challenges: [
+            {
+                title: "Multi-Vendor Marketplace",
+                description: "Creating a platform that accommodates multiple dealers, private sellers, and service providers with different needs."
+            },
+            {
+                title: "Vehicle Verification System",
+                description: "Implementing robust vehicle verification and history reporting to ensure buyer confidence."
+            },
+            {
+                title: "Integrated Financial Services",
+                description: "Integrating loan and insurance services seamlessly into the buying process."
+            }
+        ],
+        solutions: [
+            {
+                title: "Advanced Marketplace Architecture",
+                description: "Built a scalable multi-vendor platform with separate dashboards for different user types.",
+                features: [
+                    "Dealer management portal",
+                    "Private seller interface",
+                    "Service provider dashboard",
+                    "Advanced search and filtering"
+                ]
+            },
+            {
+                title: "Vehicle Verification Engine",
+                description: "Developed comprehensive vehicle verification system with history reports and inspection scheduling.",
+                features: [
+                    "VIN-based verification",
+                    "Vehicle history reports",
+                    "Inspection scheduling",
+                    "Quality assurance protocols"
+                ]
+            }
+        ],
+        results: [
+            {
+                label: "Active Listings",
+                value: "15,000+",
+                description: "Vehicles listed on the platform",
+                icon: "🚗"
+            },
+            {
+                label: "Transaction Volume",
+                value: "$50M+",
+                description: "Total transaction value processed",
+                icon: "💵"
+            },
+            {
+                label: "User Satisfaction",
+                value: "4.7/5",
+                description: "Average user rating",
+                icon: "⭐"
+            },
+            {
+                label: "Platform Growth",
+                value: "+200%",
+                description: "Year-over-year user growth",
+                icon: "📈"
+            }
+        ],
+        conclusion: "PAS Auto Source successfully created a trusted automotive marketplace that streamlined the buying and selling process while maintaining high quality standards.",
+        testimonial: {
+            quote: "Techmapperz delivered a platform that exceeded our expectations. Our business has grown exponentially since launch.",
+            author: "Mike Rodriguez",
+            position: "CEO, Premier Auto Source"
+        }
+    },
+    {
+        image: "/Photos/IT_1.webp",
+        category: "IT",
+        techStack: "React, Node.js, MongoDB, Express, Material-UI, Redux, Socket.io",
+        name: "Fabcon - Interior Design Mobile App",
+        link: "/portfolios/fabcon",
+        slug: "fabcon",
+        details: [
+            "A comprehensive interior design mobile application that connects customers with professional designers and vendors. The platform streamlines the entire interior design process from consultation to project completion."
+        ],
+        projectDetails: {
+            year: "2023",
+            location: "Mumbai, India",
+            duration: "8 months",
+            teamSize: "12 developers",
+            industry: "Interior Design",
+            projectType: "Mobile Application"
+        },
+        challenges: [
+            {
+                title: "Complex User Journey Management",
+                description: "Managing multiple user types (customers, designers, vendors) with different needs and workflows within a single platform."
+            },
+            {
+                title: "Real-time Collaboration Features",
+                description: "Implementing seamless real-time communication and project tracking between customers, designers, and vendors."
+            },
+            {
+                title: "Scalable Architecture Design",
+                description: "Creating a robust backend architecture that could handle growing user base and complex business logic."
+            }
+        ],
+        solutions: [
+            {
+                title: "Multi-Role Dashboard System",
+                description: "Developed comprehensive role-based dashboards with customized interfaces for each user type.",
+                features: [
+                    "Customer project management interface",
+                    "Designer portfolio and project tools",
+                    "Vendor inventory and order management",
+                    "Admin oversight and analytics dashboard"
+                ]
+            },
+            {
+                title: "Real-Time Communication Hub",
+                description: "Integrated Socket.io for instant messaging, project updates, and collaborative design sessions.",
+                features: [
+                    "Instant messaging system",
+                    "File sharing and collaboration",
+                    "Real-time project status updates",
+                    "Push notifications for important events"
+                ]
+            }
+        ],
+        results: [
+            {
+                label: "User Acquisition",
+                value: "10,000+",
+                description: "Active users within first 6 months",
+                icon: "👥"
+            },
+            {
+                label: "Project Completion Rate",
+                value: "95%",
+                description: "Successful project completion through platform",
+                icon: "✅"
+            },
+            {
+                label: "Response Time",
+                value: "<2s",
+                description: "Average API response time optimization",
+                icon: "⚡"
+            },
+            {
+                label: "User Satisfaction",
+                value: "4.8/5",
+                description: "Average rating from customer feedback",
+                icon: "⭐"
+            }
+        ],
+        conclusion: "The Fabcon mobile application successfully revolutionized the interior design industry workflow by creating a unified platform that seamlessly connects all stakeholders.",
+        testimonial: {
+            quote: "Techmapperz delivered exactly what we envisioned and more. The app has transformed how we manage our interior design projects and communicate with clients.",
+            author: "Rajesh Sharma",
+            position: "CEO, Fabcon"
+        }
+    },
+
+    {
         image: "/Photos/CRM_Mockup_banner.webp",
         category: "IT",
         techStack: "React, Node.js, PostgreSQL, Express, Socket.io, Chart.js, JWT",
@@ -618,8 +621,8 @@ const gisPortfolioData = [
     {
         image: "/Photos/GIS_portfolio/Topographical Survey & Mapping of Proposed Railway Track/1.webp",
         category: "GIS",
-        techStack: "LiDAR, UAV Technology, ArcGIS, QGIS, Drone Sensors, Railway Mapping",
-        name: "Topographical Survey and Mapping of proposed Railway Track",
+        techStack: "LiDAR Survey , Railway Corridor Mapping , Point Cloud Data",
+        name: "Drone based LiDAR Topographic Survey for Railway Corridor Mapping",
         link: "/portfolios/topographical_railway_survey",
         slug: "topographical_railway_survey",
         details: [
@@ -661,7 +664,7 @@ const gisPortfolioData = [
                     "UAV-based data collection",
                     "Terrain and structure mapping"
                 ],
-                image:"/Photos/GIS_portfolio/Topographical Survey & Mapping of Proposed Railway Track/2.webp"
+                image: "/Photos/GIS_portfolio/Topographical Survey & Mapping of Proposed Railway Track/2.webp"
             },
             {
                 title: "Aerial Imagery Acquisition",
@@ -672,7 +675,7 @@ const gisPortfolioData = [
                     "Enhanced data visualization",
                     "Precise feature localization"
                 ],
-                image:"/Photos/GIS_portfolio/Topographical Survey & Mapping of Proposed Railway Track/3.webp"
+                image: "/Photos/GIS_portfolio/Topographical Survey & Mapping of Proposed Railway Track/3.webp"
             },
             {
                 title: "Point Cloud Processing",
@@ -683,7 +686,7 @@ const gisPortfolioData = [
                     "Point cloud processing",
                     "Elevation data extraction"
                 ],
-                image:"/Photos/GIS_portfolio/Topographical Survey & Mapping of Proposed Railway Track/1.webp"
+                image: "/Photos/GIS_portfolio/Topographical Survey & Mapping of Proposed Railway Track/1.webp"
             },
             {
                 title: "Feature Extraction and Mapping",
@@ -694,7 +697,7 @@ const gisPortfolioData = [
                     "Access road identification",
                     "Building detection and mapping"
                 ],
-                image:"/Photos/GIS_portfolio/Topographical Survey & Mapping of Proposed Railway Track/1.webp"
+                image: "/Photos/GIS_portfolio/Topographical Survey & Mapping of Proposed Railway Track/1.webp"
             }
         ],
         benefits: [
@@ -721,7 +724,7 @@ const gisPortfolioData = [
     {
         image: "/Photos/GIS_portfolio/Ammonia and Water Pipeline Drone Survey & Digitization Project/1.webp",
         category: "GIS",
-        techStack: "UAV Technology, ArcGIS, QGIS, Drone Sensors, 3D Modeling, Spatial Analysis",
+        techStack: "Drone Survey , Pipeline mapping , Asset Mapping",
         name: "Ammonia and Water Pipeline Drone Survey & Digitization Project",
         link: "/portfolios/ammonia_water_pipeline",
         slug: "ammonia_water_pipeline",
@@ -764,7 +767,7 @@ const gisPortfolioData = [
                     "Real-time data capture",
                     "Comprehensive coverage"
                 ],
-                image:"/Photos/GIS_portfolio/Ammonia and Water Pipeline Drone Survey & Digitization Project/2.webp"
+                image: "/Photos/GIS_portfolio/Ammonia and Water Pipeline Drone Survey & Digitization Project/2.webp"
             },
             {
                 title: "Ortho-mosaic and 3D Modeling",
@@ -775,7 +778,7 @@ const gisPortfolioData = [
                     "Elevation mapping",
                     "3D visualization"
                 ],
-                image:"/Photos/GIS_portfolio/Ammonia and Water Pipeline Drone Survey & Digitization Project/3.webp"
+                image: "/Photos/GIS_portfolio/Ammonia and Water Pipeline Drone Survey & Digitization Project/3.webp"
             },
             {
                 title: "Monitoring and Analysis",
@@ -786,7 +789,7 @@ const gisPortfolioData = [
                     "Terrain analysis",
                     "GIS-based visualization"
                 ],
-                image:"/Photos/GIS_portfolio/Ammonia and Water Pipeline Drone Survey & Digitization Project/1.webp"
+                image: "/Photos/GIS_portfolio/Ammonia and Water Pipeline Drone Survey & Digitization Project/1.webp"
             },
             {
                 title: "Decision Support System",
@@ -797,7 +800,7 @@ const gisPortfolioData = [
                     "Spatial information access",
                     "Decision support tools"
                 ],
-                image:"/Photos/GIS_portfolio/Ammonia and Water Pipeline Drone Survey & Digitization Project/1.webp"
+                image: "/Photos/GIS_portfolio/Ammonia and Water Pipeline Drone Survey & Digitization Project/1.webp"
             }
         ],
         benefits: [
@@ -836,8 +839,8 @@ const gisPortfolioData = [
     {
         image: "/Photos/GIS_portfolio/Gas Pipeline Digitization and Report Making/1.webp",
         category: "GIS",
-        techStack: "ArcGIS, QGIS, GPS, CAD, Pipeline Design Software, 3D Modeling, Spatial Analysis",
-        name: "Gas Pipeline Digitization and Report Making",
+        techStack: "Gas Pipeline Mapping, Hazard Mapping, Infrastructure Mapping",
+        name: "Gas Pipeline Digitization and Digital Asset Registry",
         link: "/portfolios/gas_pipeline_digitization",
         slug: "gas_pipeline_digitization",
         details: [
@@ -875,7 +878,7 @@ const gisPortfolioData = [
                     "ArcGIS technology integration",
                     "Pipeline accuracy verification"
                 ],
-                image:"/Photos/GIS_portfolio/Gas Pipeline Digitization and Report Making/2.webp"
+                image: "/Photos/GIS_portfolio/Gas Pipeline Digitization and Report Making/2.webp"
             },
             {
                 title: "Risk & Impact Assessment",
@@ -886,7 +889,7 @@ const gisPortfolioData = [
                     "Demographic data integration",
                     "Decision support systems"
                 ],
-                image:"/Photos/GIS_portfolio/Gas Pipeline Digitization and Report Making/3.webp"
+                image: "/Photos/GIS_portfolio/Gas Pipeline Digitization and Report Making/3.webp"
             },
             {
                 title: "Data-Driven Operations",
@@ -897,7 +900,7 @@ const gisPortfolioData = [
                     "Analytics-driven workflows",
                     "Performance monitoring"
                 ],
-                image:"/Photos/GIS_portfolio/Gas Pipeline Digitization and Report Making/1.webp"
+                image: "/Photos/GIS_portfolio/Gas Pipeline Digitization and Report Making/1.webp"
             }
         ],
         benefits: [
@@ -924,8 +927,8 @@ const gisPortfolioData = [
     {
         image: "/Photos/GIS_portfolio/Drone-Based 2D Feature Extraction of Mining Area/1.webp",
         category: "GIS",
-        techStack: "Drone Technology, CAD Mapping, GIS Analysis, Mining Planning",
-        name: "Drone-Based 2D Feature Extraction of Mining Area",
+        techStack: "CAD Mapping, Land Use Mapping, Mine Boundary Mapping",
+        name: "Drone-Based 2D Feature Extraction & CAD GIS Integration of Mining Area",
         link: "/portfolios/mining_area_extraction",
         slug: "mining_area_extraction",
         details: [
@@ -967,7 +970,7 @@ const gisPortfolioData = [
                     "Land class classification",
                     "Utility mapping"
                 ],
-                image:"/Photos/GIS_portfolio/Drone-Based 2D Feature Extraction of Mining Area/2.webp"
+                image: "/Photos/GIS_portfolio/Drone-Based 2D Feature Extraction of Mining Area/2.webp"
             },
             {
                 title: "Mapping and Data Processing",
@@ -978,7 +981,7 @@ const gisPortfolioData = [
                     "Design integration",
                     "Monitoring system setup"
                 ],
-                image:"/Photos/GIS_portfolio/Drone-Based 2D Feature Extraction of Mining Area/3.webp"
+                image: "/Photos/GIS_portfolio/Drone-Based 2D Feature Extraction of Mining Area/3.webp"
             },
             {
                 title: "Land Use and Boundary Mapping",
@@ -989,7 +992,7 @@ const gisPortfolioData = [
                     "Land use classification",
                     "Environmental zone mapping"
                 ],
-                image:"/Photos/GIS_portfolio/Drone-Based 2D Feature Extraction of Mining Area/1.webp"
+                image: "/Photos/GIS_portfolio/Drone-Based 2D Feature Extraction of Mining Area/1.webp"
             },
             {
                 title: "Mapping the infrastructure and connections",
@@ -1000,7 +1003,7 @@ const gisPortfolioData = [
                     "Drainage system analysis",
                     "Connectivity assessment"
                 ],
-                image:"/Photos/GIS_portfolio/Drone-Based 2D Feature Extraction of Mining Area/1.webp"
+                image: "/Photos/GIS_portfolio/Drone-Based 2D Feature Extraction of Mining Area/1.webp"
             }
         ],
         benefits: [
@@ -1033,8 +1036,8 @@ const gisPortfolioData = [
     {
         image: "/Photos/GIS_portfolio/Hooghly Riverfront GIS Mapping Project/1.webp",
         category: "GIS",
-        techStack: "GIS, Spatial Analysis, Land Use Mapping, Urban Planning",
-        name: "Hooghly Riverfront GIS Mapping Project",
+        techStack: "Riverfront Mapping, Socio-Economic Development, Transport Network Mapping",
+        name: "Riverfront and Local Economic Development in the Kolkata Metropolitan Area",
         link: "/portfolios/hooghly_riverfront_mapping",
         slug: "hooghly_riverfront_mapping",
         details: [
@@ -1080,7 +1083,7 @@ const gisPortfolioData = [
                     "Greenland identification",
                     "Transportation network mapping"
                 ],
-                image:"/Photos/GIS_portfolio/Hooghly Riverfront GIS Mapping Project/2.webp"
+                image: "/Photos/GIS_portfolio/Hooghly Riverfront GIS Mapping Project/2.webp"
             },
             {
                 title: "Land Use and Land cover Mapping",
@@ -1091,7 +1094,7 @@ const gisPortfolioData = [
                     "Comprehensive jetty mapping",
                     "Land cover classification"
                 ],
-                image:"/Photos/GIS_portfolio/Hooghly Riverfront GIS Mapping Project/3.webp"
+                image: "/Photos/GIS_portfolio/Hooghly Riverfront GIS Mapping Project/3.webp"
             },
             {
                 title: "Commercial & Social Data mapping",
@@ -1102,7 +1105,7 @@ const gisPortfolioData = [
                     "Warehouse documentation",
                     "Gender-based data analysis"
                 ],
-                image:"/Photos/GIS_portfolio/Hooghly Riverfront GIS Mapping Project/1.webp"
+                image: "/Photos/GIS_portfolio/Hooghly Riverfront GIS Mapping Project/1.webp"
             },
             {
                 title: "Planning & Analysis Tools",
@@ -1113,7 +1116,7 @@ const gisPortfolioData = [
                     "Accessibility studies",
                     "Development potential mapping"
                 ],
-                image:"/Photos/GIS_portfolio/Hooghly Riverfront GIS Mapping Project/1.webp"
+                image: "/Photos/GIS_portfolio/Hooghly Riverfront GIS Mapping Project/1.webp"
             }
         ],
         benefits: [
@@ -1152,8 +1155,8 @@ const gisPortfolioData = [
     {
         image: "/Photos/GIS_portfolio/Urban & Rural Areas 2D Feature Extraction/1.webp",
         category: "GIS",
-        techStack: "GIS Analysis, Land Use Mapping, Urban Planning, Remote Sensing",
-        name: "Urban & Rural Areas 2D Feature Extraction",
+        techStack: "Habitation Mapping, Infrastructurte Mapping, Utility",
+        name: "Detailed Land-use & Land-cover Mapping of Urban & Rural Areas",
         link: "/portfolios/urban_rural_extraction",
         slug: "urban_rural_extraction",
         details: [
@@ -1191,7 +1194,7 @@ const gisPortfolioData = [
                     "Remote sensing integration",
                     "Accuracy enhancement protocols"
                 ],
-                image:"/Photos/GIS_portfolio/Urban & Rural Areas 2D Feature Extraction/2.webp"
+                image: "/Photos/GIS_portfolio/Urban & Rural Areas 2D Feature Extraction/2.webp"
             },
             {
                 title: "Defining Settlement Boundaries",
@@ -1202,7 +1205,7 @@ const gisPortfolioData = [
                     "Physical criteria assessment",
                     "Precision boundary mapping"
                 ],
-                image:"/Photos/GIS_portfolio/Urban & Rural Areas 2D Feature Extraction/3.webp"
+                image: "/Photos/GIS_portfolio/Urban & Rural Areas 2D Feature Extraction/3.webp"
             },
             {
                 title: "Detailed Mapping at an Optimal Scale",
@@ -1213,7 +1216,7 @@ const gisPortfolioData = [
                     "Building footprint extraction",
                     "Road network mapping"
                 ],
-                image:"/Photos/GIS_portfolio/Urban & Rural Areas 2D Feature Extraction/1.webp"
+                image: "/Photos/GIS_portfolio/Urban & Rural Areas 2D Feature Extraction/1.webp"
             }
         ],
         benefits: [
@@ -1240,7 +1243,7 @@ const gisPortfolioData = [
     {
         image: "/Photos/GIS_portfolio/Industrial Mapping & Planning/1.webp",
         category: "GIS",
-        techStack: "GIS Software, Industrial Mapping, Drone Technology, Spatial Planning",
+        techStack: "Landuse Landcover, Site Selection, Industrial Mapping",
         name: "Industrial Mapping & Planning",
         link: "/portfolios/industrial_mapping_planning",
         slug: "industrial_mapping_planning",
@@ -1287,7 +1290,7 @@ const gisPortfolioData = [
                     "Comprehensive aerial coverage",
                     "Industrial site assessment"
                 ],
-                image:"/Photos/GIS_portfolio/Industrial Mapping & Planning/2.webp"
+                image: "/Photos/GIS_portfolio/Industrial Mapping & Planning/2.webp"
             },
             {
                 title: "Image Processing for Data Analysis",
@@ -1298,7 +1301,7 @@ const gisPortfolioData = [
                     "Insight generation",
                     "Planning support analysis"
                 ],
-                image:"/Photos/GIS_portfolio/Industrial Mapping & Planning/1.webp"
+                image: "/Photos/GIS_portfolio/Industrial Mapping & Planning/1.webp"
             },
             {
                 title: "GIS Software for Industrial Mapping",
@@ -1309,7 +1312,7 @@ const gisPortfolioData = [
                     "Utility network analysis",
                     "Connectivity assessment"
                 ],
-                image:"/Photos/GIS_portfolio/Industrial Mapping & Planning/1.webp"
+                image: "/Photos/GIS_portfolio/Industrial Mapping & Planning/1.webp"
             },
             {
                 title: "Enhanced Operations and Site Selection",
@@ -1320,7 +1323,7 @@ const gisPortfolioData = [
                     "Site selection criteria",
                     "Industrial zone planning"
                 ],
-                image:"/Photos/GIS_portfolio/Industrial Mapping & Planning/1.webp"
+                image: "/Photos/GIS_portfolio/Industrial Mapping & Planning/1.webp"
             }
         ],
         benefits: [
@@ -1359,7 +1362,7 @@ const gisPortfolioData = [
     {
         image: "/Photos/GIS_portfolio/Georeferencing_of_Maps/1.webp",
         category: "GIS",
-        techStack: "GIS, Georeferencing, Coordinate Systems, Digital Cartography, Spatial Data Processing",
+        techStack: "Map rectification, cadastral maps, Georeferencing",
         name: "Georeferencing",
         link: "/portfolios/georeferencing",
         slug: "georeferencing",
@@ -1398,7 +1401,7 @@ const gisPortfolioData = [
                     "Noise reduction techniques",
                     "Clarity improvement methods"
                 ],
-                image:"/Photos/GIS_portfolio/Georeferencing_of_Maps/2.webp"
+                image: "/Photos/GIS_portfolio/Georeferencing_of_Maps/2.webp"
             },
             {
                 title: "Ground Control Point Verification",
@@ -1409,7 +1412,7 @@ const gisPortfolioData = [
                     "Reference point establishment",
                     "Quality assurance measures"
                 ],
-                image:"/Photos/GIS_portfolio/Georeferencing_of_Maps/3.webp"
+                image: "/Photos/GIS_portfolio/Georeferencing_of_Maps/3.webp"
             },
             {
                 title: "Scale Adjustment",
@@ -1420,7 +1423,7 @@ const gisPortfolioData = [
                     "Proportional adjustments",
                     "Precision scaling methods"
                 ],
-                image:"/Photos/GIS_portfolio/Georeferencing_of_Maps/1.webp"
+                image: "/Photos/GIS_portfolio/Georeferencing_of_Maps/1.webp"
             }
         ],
         benefits: [
@@ -1447,7 +1450,7 @@ const gisPortfolioData = [
     {
         image: "/Photos/GIS_portfolio/Navigation Mapping/1.webp",
         category: "GIS",
-        techStack: "GIS, Navigation Technology, Geospatial Analytics, Transportation Planning",
+        techStack: "Transport accessibility, Route optimisation, Traffic Flow",
         name: "Navigation Mapping",
         link: "/portfolios/navigation_mapping",
         slug: "navigation_mapping",
@@ -1490,7 +1493,7 @@ const gisPortfolioData = [
                     "Condition assessment",
                     "Comprehensive road attributes"
                 ],
-                image:"/Photos/GIS_portfolio/Navigation Mapping/2.webp"
+                image: "/Photos/GIS_portfolio/Navigation Mapping/2.webp"
             },
             {
                 title: "Navigation Mapping",
@@ -1501,7 +1504,7 @@ const gisPortfolioData = [
                     "Multi-modal transport support",
                     "Route optimization"
                 ],
-                image:"/Photos/GIS_portfolio/Navigation Mapping/3.webp"
+                image: "/Photos/GIS_portfolio/Navigation Mapping/3.webp"
             },
             {
                 title: "Geospatial Database Development",
@@ -1512,7 +1515,7 @@ const gisPortfolioData = [
                     "Advanced visualization",
                     "Comprehensive analysis tools"
                 ],
-                image:"/Photos/GIS_portfolio/Navigation Mapping/1.webp"
+                image: "/Photos/GIS_portfolio/Navigation Mapping/1.webp"
             },
             {
                 title: "Data Integration & Sharing",
@@ -1523,7 +1526,7 @@ const gisPortfolioData = [
                     "Citizen-facing applications",
                     "Seamless data sharing"
                 ],
-                image:"/Photos/GIS_portfolio/Navigation Mapping/1.webp"
+                image: "/Photos/GIS_portfolio/Navigation Mapping/1.webp"
             }
         ],
         benefits: [

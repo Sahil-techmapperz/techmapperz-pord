@@ -55,11 +55,11 @@ function ProjectCard({ item, onOpen }) {
         />
       </div>
       <div className="p-4 lg:p-5">
-        <div className="mb-1 flex items-center gap-2 text-xs text-gray-400">
+        {/* <div className="mb-1 flex items-center gap-2 text-xs text-gray-400">
           <MapPin className="h-3.5 w-3.5" /> {item.location || "India"}
           <span className="mx-2 h-1 w-1 rounded-full bg-gray-500" />
           <Calendar className="h-3.5 w-3.5" /> {item.period || "2024"}
-        </div>
+        </div> */}
         <h3 className="mb-2 line-clamp-2 text-base font-semibold text-white lg:text-lg">
           {item.title}
         </h3>
@@ -121,8 +121,8 @@ function ProjectDrawer({ open, onClose, item }) {
             <div className="space-y-4">
               <div className="flex flex-wrap items-center gap-2 text-sm text-gray-400">
                 <Badge><Building2 className="mr-1 h-3.5 w-3.5" /> {item.category || "Technology"}</Badge>
-                <Badge><MapPin className="mr-1 h-3.5 w-3.5" /> India</Badge>
-                <Badge><Calendar className="mr-1 h-3.5 w-3.5" /> 2024</Badge>
+                {/* <Badge><MapPin className="mr-1 h-3.5 w-3.5" /> India</Badge> */}
+                {/* <Badge><Calendar className="mr-1 h-3.5 w-3.5" /> 2024</Badge> */}
               </div>
               <p className="text-sm leading-relaxed text-gray-300">{item.description}</p>
               <div className="grid grid-cols-2 gap-4">
