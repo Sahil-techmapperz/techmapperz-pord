@@ -5,7 +5,7 @@ const itPortfolioData = [
 
 
     {
-        image: "/Photos/welho_banner.webp",
+        image: "/Photos/Welho_banner.webp",
         category: "IT",
         techStack: "React, Node.js, PostgreSQL, Express, Material-UI, PayPal, Shopify API",
         name: "Welho - Health & Wellness E-commerce",
