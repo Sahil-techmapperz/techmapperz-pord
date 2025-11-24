@@ -5,8 +5,10 @@ import PaginationButtons from './PaginationButtons';
 import getallblogs from '@/lib/getallblogs';
 
 const BlogList = async ({ page }) => {
-  const data = await getallblogs(page);
-  const { blogPosts, totalPages } = data;
+  // Ensure page is a number
+  const pageNum = Number(page) || 1;
+  const data = await getallblogs(pageNum);
+  const { blogPosts = [], totalPages = 1 } = data || {};
 
 
   return (

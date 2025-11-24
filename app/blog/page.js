@@ -53,7 +53,8 @@ export const metadata = {
 };
 
 const ArticlePage = ({ searchParams }) => {
-  let page = searchParams?.page || 1;
+  // Ensure page is a number and defaults to 1
+  const page = Number(searchParams?.page) || 1;
 
   return (
     <div className="bg-gray-900 text-white min-h-screen">

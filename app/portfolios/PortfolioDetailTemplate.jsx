@@ -156,9 +156,9 @@ export default function PortfolioDetailTemplate({
 
               {/* Main Heading */}
               <div className="space-y-6">
-                <h1 className="text-4xl font-bold leading-tight text-white lg:text-6xl xl:text-7xl">
+                <h1 className="text-4xl font-bold leading-tight text-white lg:text-[3.5rem] xl:text-[3.5rem]">
                   {portfolioItem.name}
-                  <span className="block text-2xl lg:text-3xl xl:text-4xl font-normal text-gray-400 mt-2">
+                  <span className="block text-2xl lg:text-2xl xl:text-2xl font-normal text-gray-400 mt-2">
                     {projectDetails.industry ? `${projectDetails.industry} Solution` : 'Digital Innovation'}
                   </span>
                 </h1>
@@ -357,19 +357,8 @@ export default function PortfolioDetailTemplate({
         </Section>
       )}
 
-      {/* Testimonial */}
-      {testimonial && portfolioItem.category !== "GIS" && (
-        <Section icon={<Users size={24} />} title="Client Feedback">
-          <div className="mx-auto max-w-4xl rounded-2xl border border-gray-600 bg-gray-800 p-8">
-            <blockquote className="text-center">
-              <p className="mb-4 text-lg italic text-gray-300">"{testimonial.quote}"</p>
-              <footer className="text-sm text-gray-400">
-                — {testimonial.author}, {testimonial.position}
-              </footer>
-            </blockquote>
-          </div>
-        </Section>
-      )}
+
+     
 
       {/* Call to Action */}
       <section className="py-12 lg:py-16">

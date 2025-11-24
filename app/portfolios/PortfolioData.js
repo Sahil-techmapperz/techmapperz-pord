@@ -8,7 +8,7 @@ const itPortfolioData = [
         image: "/Photos/Welho_banner.webp",
         category: "IT",
         techStack: "React, Node.js, PostgreSQL, Express, Material-UI, PayPal, Shopify API",
-        name: "Welho - Food E-commerce  Site",
+        name: "An information-rich, dynamic Dairy company website",
         link: "/portfolios/welho",
         slug: "welho",
         details: [
@@ -19,7 +19,7 @@ const itPortfolioData = [
             location: "California, USA",
             duration: "9 months",
             teamSize: "14 developers",
-            industry: "Health & Wellness",
+            industry: "Food and Direy",
             projectType: "E-commerce Platform"
         },
         challenges: [
@@ -95,7 +95,7 @@ const itPortfolioData = [
         image: "/Photos/whitespreadfoods_banner.webp",
         category: "IT",
         techStack: "React, Node.js, MongoDB, Express, Chart.js, D3.js, Python",
-        name: "White Spread Foods – Dairy Sales Dashboard",
+        name: "A fully integrated sales and e-commerce dashboard",
         link: "/portfolios/white-spread-foods",
         slug: "white-spread-foods",
         details: [
@@ -106,7 +106,7 @@ const itPortfolioData = [
             location: "Mumbai, India",
             duration: "7 months",
             teamSize: "12 developers",
-            industry: "Food Manufacturing",
+            industry: "E-commerce Platform",
             projectType: "Business Intelligence Platform"
         },
         challenges: [
@@ -182,7 +182,7 @@ const itPortfolioData = [
         image: "/Photos/manuser-ghorbaari1.webp",
         category: "IT",
         techStack: "React, Node.js, MySQL, Express, Booking Engine, Payment Gateway, Maps API",
-        name: "Manusher Ghorbari - Booking Platform",
+        name: "An interactive hotel booking platform with complete property insights",
         link: "/portfolios/manusher-ghorbari",
         slug: "manusher-ghorbari",
         details: [
@@ -269,7 +269,7 @@ const itPortfolioData = [
         image: "/Photos/shrc_banner.webp",
         category: "IT",
         techStack: "React, Node.js, MySQL, Express, Bootstrap, JWT, Payment Gateway",
-        name: "SHRC - Welfare Society Platform",
+        name: " NGO Website for member onboarding and complaint management",
         link: "/portfolios/shrc",
         slug: "shrc",
         details: [
@@ -356,7 +356,7 @@ const itPortfolioData = [
         image: "/Photos/premierautosource_banner.webp",
         category: "IT",
         techStack: "React, Node.js, MongoDB, Express, Redux, Stripe, AWS",
-        name: "PAS Auto Source - Automotive Platform",
+        name: "An interactive, dynamic automobile company website",
         link: "/portfolios/pas-auto-source",
         slug: "pas-auto-source",
         details: [
@@ -526,7 +526,6 @@ const itPortfolioData = [
             position: "CEO, Fabcon"
         }
     },
-
     {
         image: "/Photos/CRM_Mockup_banner.webp",
         category: "IT",
@@ -613,7 +612,622 @@ const itPortfolioData = [
             author: "Ravi Sharma",
             position: "CEO, Techmapperz"
         }
-    }
+    },
+
+
+
+    {
+        image: "/Photos/IT_portfolio/aahelipublishers/1.webp",
+        category: "IT",
+        techStack: "React, Node.js, MongoDB, Express, Material-UI, Redux, Socket.io",
+        name: "An interactive, end-to-end e-commerce platform for a book publisher ",
+        link: "/portfolios/aahelipublishers",
+        slug: "aahelipublishers",
+        details: [
+            "A comprehensive interior design mobile application that connects customers with professional designers and vendors. The platform streamlines the entire interior design process from consultation to project completion."
+        ],
+        projectDetails: {
+            year: "2023",
+            location: "Mumbai, India",
+            duration: "8 months",
+            teamSize: "12 developers",
+            industry: "Interior Design",
+            projectType: "Mobile Application"
+        },
+        challenges: [
+            {
+                title: "Complex User Journey Management",
+                description: "Managing multiple user types (customers, designers, vendors) with different needs and workflows within a single platform."
+            },
+            {
+                title: "Real-time Collaboration Features",
+                description: "Implementing seamless real-time communication and project tracking between customers, designers, and vendors."
+            },
+            {
+                title: "Scalable Architecture Design",
+                description: "Creating a robust backend architecture that could handle growing user base and complex business logic."
+            }
+        ],
+        solutions: [
+            {
+                title: "Multi-Role Dashboard System",
+                description: "Developed comprehensive role-based dashboards with customized interfaces for each user type.",
+                features: [
+                    "Customer project management interface",
+                    "Designer portfolio and project tools",
+                    "Vendor inventory and order management",
+                    "Admin oversight and analytics dashboard"
+                ]
+            },
+            {
+                title: "Real-Time Communication Hub",
+                description: "Integrated Socket.io for instant messaging, project updates, and collaborative design sessions.",
+                features: [
+                    "Instant messaging system",
+                    "File sharing and collaboration",
+                    "Real-time project status updates",
+                    "Push notifications for important events"
+                ]
+            }
+        ],
+        results: [
+            {
+                label: "User Acquisition",
+                value: "10,000+",
+                description: "Active users within first 6 months",
+                icon: "👥"
+            },
+            {
+                label: "Project Completion Rate",
+                value: "95%",
+                description: "Successful project completion through platform",
+                icon: "✅"
+            },
+            {
+                label: "Response Time",
+                value: "<2s",
+                description: "Average API response time optimization",
+                icon: "⚡"
+            },
+            {
+                label: "User Satisfaction",
+                value: "4.8/5",
+                description: "Average rating from customer feedback",
+                icon: "⭐"
+            }
+        ],
+        conclusion: "The Fabcon mobile application successfully revolutionized the interior design industry workflow by creating a unified platform that seamlessly connects all stakeholders.",
+        testimonial: {
+            quote: "Techmapperz delivered exactly what we envisioned and more. The app has transformed how we manage our interior design projects and communicate with clients.",
+            author: "Rajesh Sharma",
+            position: "CEO, Fabcon"
+        }
+    },
+    {
+        image: "/Photos/IT_portfolio/ambientconstruction/1.webp",
+        category: "IT",
+        techStack: "React, Node.js, MongoDB, Express, Material-UI, Redux, Socket.io",
+        name: "ambientconstruction",
+        link: "/portfolios/ambientconstruction",
+        slug: "ambientconstruction",
+        details: [
+            "A comprehensive interior design mobile application that connects customers with professional designers and vendors. The platform streamlines the entire interior design process from consultation to project completion."
+        ],
+        projectDetails: {
+            year: "2023",
+            location: "Mumbai, India",
+            duration: "8 months",
+            teamSize: "12 developers",
+            industry: "Interior Design",
+            projectType: "Mobile Application"
+        },
+        challenges: [
+            {
+                title: "Complex User Journey Management",
+                description: "Managing multiple user types (customers, designers, vendors) with different needs and workflows within a single platform."
+            },
+            {
+                title: "Real-time Collaboration Features",
+                description: "Implementing seamless real-time communication and project tracking between customers, designers, and vendors."
+            },
+            {
+                title: "Scalable Architecture Design",
+                description: "Creating a robust backend architecture that could handle growing user base and complex business logic."
+            }
+        ],
+        solutions: [
+            {
+                title: "Multi-Role Dashboard System",
+                description: "Developed comprehensive role-based dashboards with customized interfaces for each user type.",
+                features: [
+                    "Customer project management interface",
+                    "Designer portfolio and project tools",
+                    "Vendor inventory and order management",
+                    "Admin oversight and analytics dashboard"
+                ]
+            },
+            {
+                title: "Real-Time Communication Hub",
+                description: "Integrated Socket.io for instant messaging, project updates, and collaborative design sessions.",
+                features: [
+                    "Instant messaging system",
+                    "File sharing and collaboration",
+                    "Real-time project status updates",
+                    "Push notifications for important events"
+                ]
+            }
+        ],
+        results: [
+            {
+                label: "User Acquisition",
+                value: "10,000+",
+                description: "Active users within first 6 months",
+                icon: "👥"
+            },
+            {
+                label: "Project Completion Rate",
+                value: "95%",
+                description: "Successful project completion through platform",
+                icon: "✅"
+            },
+            {
+                label: "Response Time",
+                value: "<2s",
+                description: "Average API response time optimization",
+                icon: "⚡"
+            },
+            {
+                label: "User Satisfaction",
+                value: "4.8/5",
+                description: "Average rating from customer feedback",
+                icon: "⭐"
+            }
+        ],
+        conclusion: "The Fabcon mobile application successfully revolutionized the interior design industry workflow by creating a unified platform that seamlessly connects all stakeholders.",
+        testimonial: {
+            quote: "Techmapperz delivered exactly what we envisioned and more. The app has transformed how we manage our interior design projects and communicate with clients.",
+            author: "Rajesh Sharma",
+            position: "CEO, Fabcon"
+        }
+    },
+    {
+        image: "/Photos/IT_portfolio/Expoguru/1.webp",
+        category: "IT",
+        techStack: "React, Node.js, MongoDB, Express, Material-UI, Redux, Socket.io",
+        name: "An interactive, dynamic interior company website",
+        link: "/portfolios/expoguru",
+        slug: "expoguru",
+        details: [
+            "A comprehensive interior design mobile application that connects customers with professional designers and vendors. The platform streamlines the entire interior design process from consultation to project completion."
+        ],
+        projectDetails: {
+            year: "2023",
+            location: "Mumbai, India",
+            duration: "8 months",
+            teamSize: "12 developers",
+            industry: "Interior Design",
+            projectType: "Mobile Application"
+        },
+        challenges: [
+            {
+                title: "Complex User Journey Management",
+                description: "Managing multiple user types (customers, designers, vendors) with different needs and workflows within a single platform."
+            },
+            {
+                title: "Real-time Collaboration Features",
+                description: "Implementing seamless real-time communication and project tracking between customers, designers, and vendors."
+            },
+            {
+                title: "Scalable Architecture Design",
+                description: "Creating a robust backend architecture that could handle growing user base and complex business logic."
+            }
+        ],
+        solutions: [
+            {
+                title: "Multi-Role Dashboard System",
+                description: "Developed comprehensive role-based dashboards with customized interfaces for each user type.",
+                features: [
+                    "Customer project management interface",
+                    "Designer portfolio and project tools",
+                    "Vendor inventory and order management",
+                    "Admin oversight and analytics dashboard"
+                ]
+            },
+            {
+                title: "Real-Time Communication Hub",
+                description: "Integrated Socket.io for instant messaging, project updates, and collaborative design sessions.",
+                features: [
+                    "Instant messaging system",
+                    "File sharing and collaboration",
+                    "Real-time project status updates",
+                    "Push notifications for important events"
+                ]
+            }
+        ],
+        results: [
+            {
+                label: "User Acquisition",
+                value: "10,000+",
+                description: "Active users within first 6 months",
+                icon: "👥"
+            },
+            {
+                label: "Project Completion Rate",
+                value: "95%",
+                description: "Successful project completion through platform",
+                icon: "✅"
+            },
+            {
+                label: "Response Time",
+                value: "<2s",
+                description: "Average API response time optimization",
+                icon: "⚡"
+            },
+            {
+                label: "User Satisfaction",
+                value: "4.8/5",
+                description: "Average rating from customer feedback",
+                icon: "⭐"
+            }
+        ],
+        conclusion: "The Fabcon mobile application successfully revolutionized the interior design industry workflow by creating a unified platform that seamlessly connects all stakeholders.",
+        testimonial: {
+            quote: "Techmapperz delivered exactly what we envisioned and more. The app has transformed how we manage our interior design projects and communicate with clients.",
+            author: "Rajesh Sharma",
+            position: "CEO, Fabcon"
+        }
+    },
+    {
+        image: "/Photos/IT_portfolio/FacultiesOnline/1.webp",
+        category: "IT",
+        techStack: "React, Node.js, MongoDB, Express, Material-UI, Redux, Socket.io",
+        name: "FacultiesOnline",
+        link: "/portfolios/facultiesOnline",
+        slug: "facultiesOnline",
+        details: [
+            "A comprehensive interior design mobile application that connects customers with professional designers and vendors. The platform streamlines the entire interior design process from consultation to project completion."
+        ],
+        projectDetails: {
+            year: "2023",
+            location: "Mumbai, India",
+            duration: "8 months",
+            teamSize: "12 developers",
+            industry: "Interior Design",
+            projectType: "Mobile Application"
+        },
+        challenges: [
+            {
+                title: "Complex User Journey Management",
+                description: "Managing multiple user types (customers, designers, vendors) with different needs and workflows within a single platform."
+            },
+            {
+                title: "Real-time Collaboration Features",
+                description: "Implementing seamless real-time communication and project tracking between customers, designers, and vendors."
+            },
+            {
+                title: "Scalable Architecture Design",
+                description: "Creating a robust backend architecture that could handle growing user base and complex business logic."
+            }
+        ],
+        solutions: [
+            {
+                title: "Multi-Role Dashboard System",
+                description: "Developed comprehensive role-based dashboards with customized interfaces for each user type.",
+                features: [
+                    "Customer project management interface",
+                    "Designer portfolio and project tools",
+                    "Vendor inventory and order management",
+                    "Admin oversight and analytics dashboard"
+                ]
+            },
+            {
+                title: "Real-Time Communication Hub",
+                description: "Integrated Socket.io for instant messaging, project updates, and collaborative design sessions.",
+                features: [
+                    "Instant messaging system",
+                    "File sharing and collaboration",
+                    "Real-time project status updates",
+                    "Push notifications for important events"
+                ]
+            }
+        ],
+        results: [
+            {
+                label: "User Acquisition",
+                value: "10,000+",
+                description: "Active users within first 6 months",
+                icon: "👥"
+            },
+            {
+                label: "Project Completion Rate",
+                value: "95%",
+                description: "Successful project completion through platform",
+                icon: "✅"
+            },
+            {
+                label: "Response Time",
+                value: "<2s",
+                description: "Average API response time optimization",
+                icon: "⚡"
+            },
+            {
+                label: "User Satisfaction",
+                value: "4.8/5",
+                description: "Average rating from customer feedback",
+                icon: "⭐"
+            }
+        ],
+        conclusion: "The Fabcon mobile application successfully revolutionized the interior design industry workflow by creating a unified platform that seamlessly connects all stakeholders.",
+        testimonial: {
+            quote: "Techmapperz delivered exactly what we envisioned and more. The app has transformed how we manage our interior design projects and communicate with clients.",
+            author: "Rajesh Sharma",
+            position: "CEO, Fabcon"
+        }
+    },
+    {
+        image: "/Photos/IT_portfolio/KalkiIndia/1.webp",
+        category: "IT",
+        techStack: "React, Node.js, MongoDB, Express, Material-UI, Redux, Socket.io",
+        name: "An informative, dynamic NGO website",
+        link: "/portfolios/kalkiindia",
+        slug: "kalkiindia",
+        details: [
+            "A comprehensive interior design mobile application that connects customers with professional designers and vendors. The platform streamlines the entire interior design process from consultation to project completion."
+        ],
+        projectDetails: {
+            year: "2023",
+            location: "Mumbai, India",
+            duration: "8 months",
+            teamSize: "12 developers",
+            industry: "Interior Design",
+            projectType: "Mobile Application"
+        },
+        challenges: [
+            {
+                title: "Complex User Journey Management",
+                description: "Managing multiple user types (customers, designers, vendors) with different needs and workflows within a single platform."
+            },
+            {
+                title: "Real-time Collaboration Features",
+                description: "Implementing seamless real-time communication and project tracking between customers, designers, and vendors."
+            },
+            {
+                title: "Scalable Architecture Design",
+                description: "Creating a robust backend architecture that could handle growing user base and complex business logic."
+            }
+        ],
+        solutions: [
+            {
+                title: "Multi-Role Dashboard System",
+                description: "Developed comprehensive role-based dashboards with customized interfaces for each user type.",
+                features: [
+                    "Customer project management interface",
+                    "Designer portfolio and project tools",
+                    "Vendor inventory and order management",
+                    "Admin oversight and analytics dashboard"
+                ]
+            },
+            {
+                title: "Real-Time Communication Hub",
+                description: "Integrated Socket.io for instant messaging, project updates, and collaborative design sessions.",
+                features: [
+                    "Instant messaging system",
+                    "File sharing and collaboration",
+                    "Real-time project status updates",
+                    "Push notifications for important events"
+                ]
+            }
+        ],
+        results: [
+            {
+                label: "User Acquisition",
+                value: "10,000+",
+                description: "Active users within first 6 months",
+                icon: "👥"
+            },
+            {
+                label: "Project Completion Rate",
+                value: "95%",
+                description: "Successful project completion through platform",
+                icon: "✅"
+            },
+            {
+                label: "Response Time",
+                value: "<2s",
+                description: "Average API response time optimization",
+                icon: "⚡"
+            },
+            {
+                label: "User Satisfaction",
+                value: "4.8/5",
+                description: "Average rating from customer feedback",
+                icon: "⭐"
+            }
+        ],
+        conclusion: "The Fabcon mobile application successfully revolutionized the interior design industry workflow by creating a unified platform that seamlessly connects all stakeholders.",
+        testimonial: {
+            quote: "Techmapperz delivered exactly what we envisioned and more. The app has transformed how we manage our interior design projects and communicate with clients.",
+            author: "Rajesh Sharma",
+            position: "CEO, Fabcon"
+        }
+    },
+    {
+        image: "/Photos/IT_portfolio/Novustech/1.webp",
+        category: "IT",
+        techStack: "React, Node.js, MongoDB, Express, Material-UI, Redux, Socket.io",
+        name: "Novustech",
+        link: "/portfolios/novustech",
+        slug: "novustech",
+        details: [
+            "A comprehensive interior design mobile application that connects customers with professional designers and vendors. The platform streamlines the entire interior design process from consultation to project completion."
+        ],
+        projectDetails: {
+            year: "2023",
+            location: "Mumbai, India",
+            duration: "8 months",
+            teamSize: "12 developers",
+            industry: "Interior Design",
+            projectType: "Mobile Application"
+        },
+        challenges: [
+            {
+                title: "Complex User Journey Management",
+                description: "Managing multiple user types (customers, designers, vendors) with different needs and workflows within a single platform."
+            },
+            {
+                title: "Real-time Collaboration Features",
+                description: "Implementing seamless real-time communication and project tracking between customers, designers, and vendors."
+            },
+            {
+                title: "Scalable Architecture Design",
+                description: "Creating a robust backend architecture that could handle growing user base and complex business logic."
+            }
+        ],
+        solutions: [
+            {
+                title: "Multi-Role Dashboard System",
+                description: "Developed comprehensive role-based dashboards with customized interfaces for each user type.",
+                features: [
+                    "Customer project management interface",
+                    "Designer portfolio and project tools",
+                    "Vendor inventory and order management",
+                    "Admin oversight and analytics dashboard"
+                ]
+            },
+            {
+                title: "Real-Time Communication Hub",
+                description: "Integrated Socket.io for instant messaging, project updates, and collaborative design sessions.",
+                features: [
+                    "Instant messaging system",
+                    "File sharing and collaboration",
+                    "Real-time project status updates",
+                    "Push notifications for important events"
+                ]
+            }
+        ],
+        results: [
+            {
+                label: "User Acquisition",
+                value: "10,000+",
+                description: "Active users within first 6 months",
+                icon: "👥"
+            },
+            {
+                label: "Project Completion Rate",
+                value: "95%",
+                description: "Successful project completion through platform",
+                icon: "✅"
+            },
+            {
+                label: "Response Time",
+                value: "<2s",
+                description: "Average API response time optimization",
+                icon: "⚡"
+            },
+            {
+                label: "User Satisfaction",
+                value: "4.8/5",
+                description: "Average rating from customer feedback",
+                icon: "⭐"
+            }
+        ],
+        conclusion: "The Fabcon mobile application successfully revolutionized the interior design industry workflow by creating a unified platform that seamlessly connects all stakeholders.",
+        testimonial: {
+            quote: "Techmapperz delivered exactly what we envisioned and more. The app has transformed how we manage our interior design projects and communicate with clients.",
+            author: "Rajesh Sharma",
+            position: "CEO, Fabcon"
+        }
+    },
+    {
+        image: "/Photos/IT_portfolio/Urpayroll/1.webp",
+        category: "IT",
+        techStack: "React, Node.js, MongoDB, Express, Material-UI, Redux, Socket.io",
+        name: "HRM–CRM App for effortless attendance, employee workflows, and client management",
+        link: "/portfolios/urpayroll",
+        slug: "urpayroll",
+        details: [
+            "A comprehensive interior design mobile application that connects customers with professional designers and vendors. The platform streamlines the entire interior design process from consultation to project completion."
+        ],
+        projectDetails: {
+            year: "2023",
+            location: "Mumbai, India",
+            duration: "8 months",
+            teamSize: "12 developers",
+            industry: "Interior Design",
+            projectType: "Mobile Application"
+        },
+        challenges: [
+            {
+                title: "Complex User Journey Management",
+                description: "Managing multiple user types (customers, designers, vendors) with different needs and workflows within a single platform."
+            },
+            {
+                title: "Real-time Collaboration Features",
+                description: "Implementing seamless real-time communication and project tracking between customers, designers, and vendors."
+            },
+            {
+                title: "Scalable Architecture Design",
+                description: "Creating a robust backend architecture that could handle growing user base and complex business logic."
+            }
+        ],
+        solutions: [
+            {
+                title: "Multi-Role Dashboard System",
+                description: "Developed comprehensive role-based dashboards with customized interfaces for each user type.",
+                features: [
+                    "Customer project management interface",
+                    "Designer portfolio and project tools",
+                    "Vendor inventory and order management",
+                    "Admin oversight and analytics dashboard"
+                ]
+            },
+            {
+                title: "Real-Time Communication Hub",
+                description: "Integrated Socket.io for instant messaging, project updates, and collaborative design sessions.",
+                features: [
+                    "Instant messaging system",
+                    "File sharing and collaboration",
+                    "Real-time project status updates",
+                    "Push notifications for important events"
+                ]
+            }
+        ],
+        results: [
+            {
+                label: "User Acquisition",
+                value: "10,000+",
+                description: "Active users within first 6 months",
+                icon: "👥"
+            },
+            {
+                label: "Project Completion Rate",
+                value: "95%",
+                description: "Successful project completion through platform",
+                icon: "✅"
+            },
+            {
+                label: "Response Time",
+                value: "<2s",
+                description: "Average API response time optimization",
+                icon: "⚡"
+            },
+            {
+                label: "User Satisfaction",
+                value: "4.8/5",
+                description: "Average rating from customer feedback",
+                icon: "⭐"
+            }
+        ],
+        conclusion: "The Fabcon mobile application successfully revolutionized the interior design industry workflow by creating a unified platform that seamlessly connects all stakeholders.",
+        testimonial: {
+            quote: "Techmapperz delivered exactly what we envisioned and more. The app has transformed how we manage our interior design projects and communicate with clients.",
+            author: "Rajesh Sharma",
+            position: "CEO, Fabcon"
+        }
+    },
+
+
+    
 ];
 
 // GIS Portfolio Data Structure

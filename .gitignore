@@ -50,3 +50,9 @@ app.zip
 
 # temporary files
 tmp_rovodev_*
+
+# backend repository (separate repo)
+backend_repo/
+
+# test files
+testsprite_tests/
