@@ -6,7 +6,12 @@ import Link from "next/link";
 import moment from "moment";
 
 const Card = ({ post }) => {
-  const { socialLinks } = post.author;
+  // Safely extract socialLinks with fallback for null author
+  const socialLinks = post.author?.socialLinks || {
+    linkedin: '#',
+    twitter: '#',
+    facebook: '#'
+  };
 
   return (
     <div className="bg-gray-800 text-white text-left max-w-sm mx-auto rounded-lg shadow-lg">
@@ -46,7 +51,7 @@ const Card = ({ post }) => {
       </div>
       <div className="flex px-4 max-sm:px-1 text-2xl gap-[10px] mt-4 space-x-4 pb-4">
 
-        <a href={socialLinks.linkedin} className="text-blue-700 hover:text-blue-800" aria-label="Share on LinkedIn">
+        <a href={socialLinks?.linkedin || '#'} className="text-blue-700 hover:text-blue-800" aria-label="Share on LinkedIn">
           <FaLinkedinIn />
         </a>
 
@@ -57,7 +62,7 @@ const Card = ({ post }) => {
           <SiQuora />
         </a>
 
-        <a href={socialLinks.twitter} className="text-blue-300 hover:text-blue-400" aria-label="Share on Twitter">
+        <a href={socialLinks?.twitter || '#'} className="text-blue-300 hover:text-blue-400" aria-label="Share on Twitter">
           <FaTwitter />
         </a>
 
