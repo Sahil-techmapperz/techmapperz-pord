@@ -31,7 +31,7 @@ const montserrat = Montserrat({
 
 // Enhanced SEO metadata for the root layout
 export const metadata = {
-  metadataBase: new URL('https://techmapperz.com'),
+  metadataBase: new URL('https://www.techmapperz.com'),
   title: {
     default: 'Techmapperz | Leading IT & GIS Solutions Company in India',
     template: '%s | Techmapperz'
@@ -59,6 +59,22 @@ export const metadata = {
   publisher: 'Techmapperz',
   category: 'Technology Services',
   classification: 'Business',
+  icons: {
+    icon: [
+      { url: 'https://www.techmapperz.com/favicon.ico', sizes: 'any' },
+      { url: 'https://www.techmapperz.com/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: 'https://www.techmapperz.com/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: 'https://www.techmapperz.com/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+    ],
+    apple: [
+      { url: 'https://www.techmapperz.com/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      { rel: 'android-chrome', url: 'https://www.techmapperz.com/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { rel: 'android-chrome', url: 'https://www.techmapperz.com/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+  },
+  manifest: '/site.webmanifest',
   robots: {
     index: true,
     follow: true,
@@ -73,7 +89,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://techmapperz.com',
+    url: 'https://www.techmapperz.com',
     title: 'Techmapperz | Leading IT & GIS Solutions Company in India',
     description: 'Techmapperz provides comprehensive IT and GIS solutions including web development, mobile apps, CRM systems, drone surveys, and spatial analysis services.',
     siteName: 'Techmapperz',
@@ -106,10 +122,10 @@ export const metadata = {
     bing: 'your-bing-verification-code'
   },
   alternates: {
-    canonical: 'https://techmapperz.com',
+    canonical: 'https://www.techmapperz.com',
     languages: {
-      'en-US': 'https://techmapperz.com',
-      'en-IN': 'https://techmapperz.com'
+      'en-US': 'https://www.techmapperz.com',
+      'en-IN': 'https://www.techmapperz.com'
     }
   },
   other: {
@@ -121,7 +137,9 @@ export const metadata = {
     'business:contact_data:locality': 'Kolkata',
     'business:contact_data:region': 'West Bengal',
     'business:contact_data:postal_code': '700001',
-    'business:contact_data:country_name': 'India'
+    'business:contact_data:country_name': 'India',
+    'theme-color': '#00B0FE',
+    'msapplication-TileColor': '#00B0FE',
   }
 };
 
@@ -129,21 +147,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Favicon and App Icons */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
-        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
-        <link rel="icon" href="/android-chrome-192x192.png" sizes="192x192" type="image/png" />
-        <link rel="icon" href="/android-chrome-512x512.png" sizes="512x512" type="image/png" />
-        
-        {/* Web App Manifest */}
-        <link rel="manifest" href="/site.webmanifest" />
-        
-        {/* Theme Color */}
-        <meta name="theme-color" content="#00B0FE" />
-        <meta name="msapplication-TileColor" content="#00B0FE" />
-        
         {/* Preload critical assets */}
         <link rel="preload" href="/Photos/3Drendered_digital_Ear.webp" as="image" />
         <link rel="preload" href="/logo.webp" as="image" />
