@@ -5,7 +5,7 @@ import Link from 'next/link'
 import React from 'react'
 import { FaArrowRightLong } from 'react-icons/fa6'
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://techmapperz.com"; // Fallback URL
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.techmapperz.com"; // Fallback URL
 
 export const metadata = {
     title: "Data Digitization For Land | Cadastral Mapping | Techmapperz | Kolkata",

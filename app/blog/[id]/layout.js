@@ -3,7 +3,7 @@ import getPost from "@/lib/getPost";
 export async function generateMetadata({ params }) {
 	const id = params.id;
 	const post = await getPost(id);
-	const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://techmapperz.com"; // Fallback URL
+	const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.techmapperz.com"; // Fallback URL
 	// console.log(post);
 
 	return {

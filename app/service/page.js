@@ -10,7 +10,7 @@ const Features = dynamic(() => import('../_Components/Features'), {
   ...createOptimizedLoader("400px", "bg-black")
 });
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://techmapperz.com";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.techmapperz.com";
 
 // Add ISR for page caching
 export const revalidate = ISR_CONFIGS.service;

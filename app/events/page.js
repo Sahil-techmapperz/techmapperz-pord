@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { FaArrowRightLong } from "react-icons/fa6";
 import { getEvents, getCultureData, getWorkspaceImages } from '@/lib/getEventsData';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://techmapperz.com";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.techmapperz.com";
 
 export const metadata = {
   title: "Life @ Techmapperz | Company Culture & Events | Techmapperz",

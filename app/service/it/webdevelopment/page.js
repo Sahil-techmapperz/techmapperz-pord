@@ -47,7 +47,7 @@ const Roadmap = dynamicImport(() => import('@/app/_Components/ExpandableCards'),
   ...createOptimizedLoader("400px", "bg-black")
 });
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://techmapperz.com";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.techmapperz.com";
 
 // Force dynamic rendering to avoid prerender errors
 export const dynamic = 'force-dynamic';

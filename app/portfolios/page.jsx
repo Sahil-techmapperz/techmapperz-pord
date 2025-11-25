@@ -1,6 +1,6 @@
 import Casestudies from './client-page';
 import enhancedPortfolioData from './PortfolioData';
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://techmapperz.com"; // Fallback URL
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.techmapperz.com"; // Fallback URL
 export const metadata = {
   title: 'Our Work Portfolio | IT, GIS & Drone Projects | Techmapperz',
   description: 'Discover Techmapperz diverse portfolio of IT and GIS projects—from drone-based mapping to custom software development—and see how we drive real-world innovation across industries.',

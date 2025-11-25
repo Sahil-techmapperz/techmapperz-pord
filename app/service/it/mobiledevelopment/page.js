@@ -43,7 +43,7 @@ const FAQ = dynamic(() => import('@/app/_Components/FAQ'), {
   ...createOptimizedLoader("500px", "bg-gray-900")
 });
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://techmapperz.com";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.techmapperz.com";
 
 // Add ISR for page caching
 export const revalidate = ISR_CONFIGS.service;

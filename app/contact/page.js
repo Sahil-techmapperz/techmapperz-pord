@@ -9,7 +9,7 @@ const ContactForm = dynamic(() => import('../_Components/ContactForm'), {
   ...createOptimizedLoader("400px", "bg-gradient-to-r from-gray-900 to-gray-800")
 });
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://techmapperz.com";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.techmapperz.com";
 
 // Add ISR for page caching
 export const revalidate = ISR_CONFIGS.contact;

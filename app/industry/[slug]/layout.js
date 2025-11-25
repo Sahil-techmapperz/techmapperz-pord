@@ -1,5 +1,5 @@
 import { categoryData } from '@/app/_Components/Industry_Expertise';
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://techmapperz.com"; // Fallback URL
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.techmapperz.com"; // Fallback URL
 
 export function generateMetadata({ params }) {
 	const getIndustryMetadata = (slug) => {

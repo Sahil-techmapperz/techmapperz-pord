@@ -89,7 +89,7 @@ import Link from 'next/link';
 import company_logo from "@/public/logo.webp";
 import { LazySection } from './_hooks/useIntersectionObserver';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://techmapperz.com"; // Fallback URL
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.techmapperz.com"; // Fallback URL
 
 
 

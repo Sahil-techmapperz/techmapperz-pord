@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import PortfolioDetailTemplate from '../../portfolios/PortfolioDetailTemplate';
 import enhancedPortfolioData from '../../portfolios/PortfolioData';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://techmapperz.com";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.techmapperz.com";
 
 // Generate metadata for each portfolio item
 export async function generateMetadata({ params }) {

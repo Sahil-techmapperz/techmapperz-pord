@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import ScrollToTop from '../_Components/ScrollToTop';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://techmapperz.com"; // Fallback URL
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.techmapperz.com"; // Fallback URL
 
 export const metadata = {
   title: "Mapping Your Business for Growth | Privacy Policy | Techmapperz",

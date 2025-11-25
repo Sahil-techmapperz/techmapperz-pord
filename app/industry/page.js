@@ -7,7 +7,7 @@ import IndustryExpertise from '../_Components/Industry_Expertise';
 import HappyClients from '../_Components/HappyClients';
 import AboutUs from '../_Components/AboutUs';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://techmapperz.com"; // Fallback URL
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.techmapperz.com"; // Fallback URL
 
 
 export const metadata = {

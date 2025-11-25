@@ -1,5 +1,5 @@
 export async function generateMetadata({ params }) {
-	const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://techmapperz.com"; // Fallback URL
+	const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.techmapperz.com"; // Fallback URL
 
 
 	const techDescriptions = {

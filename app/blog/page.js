@@ -36,7 +36,7 @@ const RecentBlogList = dynamicImport(() => import("../_Components/RecentBlogList
   )
 });
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://techmapperz.com";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.techmapperz.com";
 
 // Force dynamic for search params
 export const dynamic = 'force-dynamic';

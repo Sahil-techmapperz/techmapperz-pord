@@ -170,12 +170,12 @@ export default function RootLayout({ children }) {
               "@graph": [
                 {
                   "@type": "Organization",
-                  "@id": "https://techmapperz.com/#organization",
+                  "@id": "https://www.techmapperz.com/#organization",
                   "name": "Techmapperz",
-                  "url": "https://techmapperz.com",
+                  "url": "https://www.techmapperz.com",
                   "logo": {
                     "@type": "ImageObject",
-                    "url": "https://techmapperz.com/logo.webp",
+                    "url": "https://www.techmapperz.com/logo.webp",
                     "width": 800,
                     "height": 600
                   },
@@ -203,27 +203,27 @@ export default function RootLayout({ children }) {
                 },
                 {
                   "@type": "WebSite",
-                  "@id": "https://techmapperz.com/#website",
-                  "url": "https://techmapperz.com",
+                  "@id": "https://www.techmapperz.com/#website",
+                  "url": "https://www.techmapperz.com",
                   "name": "Techmapperz",
                   "description": "Leading IT & GIS Solutions Company in India",
                   "publisher": {
-                    "@id": "https://techmapperz.com/#organization"
+                    "@id": "https://www.techmapperz.com/#organization"
                   },
                   "potentialAction": {
                     "@type": "SearchAction",
                     "target": {
                       "@type": "EntryPoint",
-                      "urlTemplate": "https://techmapperz.com/search?q={search_term_string}"
+                      "urlTemplate": "https://www.techmapperz.com/search?q={search_term_string}"
                     },
                     "query-input": "required name=search_term_string"
                   }
                 },
                 {
                   "@type": "LocalBusiness",
-                  "@id": "https://techmapperz.com/#localbusiness",
+                  "@id": "https://www.techmapperz.com/#localbusiness",
                   "name": "Techmapperz",
-                  "image": "https://techmapperz.com/logo.webp",
+                  "image": "https://www.techmapperz.com/logo.webp",
                   "description": "Professional IT and GIS services including web development, mobile applications, CRM systems, drone surveys, and spatial analysis.",
                   "address": {
                     "@type": "PostalAddress",
@@ -236,7 +236,7 @@ export default function RootLayout({ children }) {
                     "latitude": 22.5726,
                     "longitude": 88.3639
                   },
-                  "url": "https://techmapperz.com",
+                  "url": "https://www.techmapperz.com",
                   "telephone": "+91-XXXXXXXXXX",
                   "priceRange": "$$",
                   "openingHours": "Mo-Fr 09:00-18:00",
