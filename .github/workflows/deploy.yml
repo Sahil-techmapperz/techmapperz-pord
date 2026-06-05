@@ -41,6 +41,10 @@ jobs:
         NEXT_PUBLIC_Site_URL: ${{ secrets.NEXT_PUBLIC_Site_URL }}
         NODE_ENV: production
 
+    - name: Compress files for deployment
+      run: |
+        tar -czf deploy.tar.gz .next public package.json package-lock.json next.config.mjs node_modules
+
     - name: Prepare Directory on AWS Lightsail
       uses: appleboy/ssh-action@v1.0.3
       with:
@@ -59,7 +63,7 @@ jobs:
         username: ${{ secrets.VPS_USERNAME }}
         key: ${{ secrets.VPS_PRIVATE_KEY }}
         port: ${{ secrets.VPS_PORT }}
-        source: ".next,public,package.json,package-lock.json,next.config.mjs"
+        source: "deploy.tar.gz"
         target: "/var/www/techmapperz-frontend-prod/"
         overwrite: true
       
@@ -73,6 +77,11 @@ jobs:
         script: |
           # Navigate to project directory
           cd /var/www/techmapperz-frontend-prod
+          
+          # Extract deployment files
+          echo "📦 Extracting files..."
+          tar -xzf deploy.tar.gz
+          rm deploy.tar.gz
           
           # Create .env file with environment variables
           cat > .env << EOF
@@ -89,11 +98,7 @@ jobs:
           export NODE_OPTIONS="--max-old-space-size=1536"
           export PORT=3001
           
-          # Install production dependencies
-          echo "📥 Installing dependencies..."
-          npm install --production
-          
-          echo "✅ Using pre-built application from GitHub Actions"
+          echo "✅ Using pre-built application and node_modules from GitHub Actions"
           
           # Verify build exists (should be included from GitHub Actions)
           if [ ! -d ".next" ]; then
