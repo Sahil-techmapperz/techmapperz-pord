@@ -1,4 +1,4 @@
-name: Deploy to Hostinger VPS
+name: Deploy Frontend to AWS Lightsail
 
 on:
   push:
@@ -25,7 +25,14 @@ jobs:
         cache: 'npm'
         
     - name: Install dependencies
-      run: npm ci
+      run: |
+        if [ -f "package-lock.json" ]; then
+          npm ci
+        else
+          echo "⚠️ package-lock.json not found, generating it..."
+          npm install --package-lock-only
+          npm ci
+        fi
       
     - name: Build project
       run: npm run build
@@ -34,51 +41,45 @@ jobs:
         NEXT_PUBLIC_Site_URL: ${{ secrets.NEXT_PUBLIC_Site_URL }}
         NODE_ENV: production
 
-    - name: Upload build files to VPS
-      uses: appleboy/scp-action@v0.1.7
-      with:
-        host: ${{ secrets.VPS_HOST }}
-        username: ${{ secrets.VPS_USERNAME }}
-        password: ${{ secrets.VPS_PASSWORD }}
-        port: ${{ secrets.VPS_PORT }}
-        source: ".next,package.json,package-lock.json"
-        target: "/root/techmapperz-pord/"
-        overwrite: true
-      
-    - name: Deploy to VPS
+    - name: Prepare Directory on AWS Lightsail
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.VPS_HOST }}
         username: ${{ secrets.VPS_USERNAME }}
-        password: ${{ secrets.VPS_PASSWORD }}
+        key: ${{ secrets.VPS_PRIVATE_KEY }}
         port: ${{ secrets.VPS_PORT }}
         script: |
-          cd /root
-          
-          # Check if project directory exists, if not clone it
-          if [ ! -d "techmapperz-pord" ]; then
-            echo "Project directory not found. Cloning repository..."
-            git clone https://github.com/Sahil-techmapperz/techmapperz-pord.git
-          else
-            echo "Project directory exists. Pulling latest changes..."
-            cd techmapperz-pord
-            git pull origin main || {
-              echo "Git pull failed. Re-cloning repository..."
-              cd /root
-              rm -rf techmapperz-pord
-              git clone https://github.com/Sahil-techmapperz/techmapperz-pord.git
-            }
-          fi
-          
+          sudo mkdir -p /var/www/techmapperz-frontend-prod
+          sudo chown -R $USER:$USER /var/www/techmapperz-frontend-prod
+
+    - name: Upload files to AWS Lightsail
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.VPS_HOST }}
+        username: ${{ secrets.VPS_USERNAME }}
+        key: ${{ secrets.VPS_PRIVATE_KEY }}
+        port: ${{ secrets.VPS_PORT }}
+        source: ".next,package.json,package-lock.json"
+        target: "/var/www/techmapperz-frontend-prod/"
+        overwrite: true
+      
+    - name: Deploy to AWS Lightsail
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.VPS_HOST }}
+        username: ${{ secrets.VPS_USERNAME }}
+        key: ${{ secrets.VPS_PRIVATE_KEY }}
+        port: ${{ secrets.VPS_PORT }}
+        script: |
           # Navigate to project directory
-          cd /root/techmapperz-pord
+          cd /var/www/techmapperz-frontend-prod
           
           # Create .env file with environment variables
           cat > .env << EOF
           NEXT_PUBLIC_BACKEND_BASE_URL=${{ secrets.NEXT_PUBLIC_BACKEND_BASE_URL }}
           NEXT_PUBLIC_Site_URL=${{ secrets.NEXT_PUBLIC_Site_URL }}
           NODE_ENV=production
-          PORT=3000
+          PORT=3001
           EOF
           
           # Export environment variables for build process
@@ -86,8 +87,10 @@ jobs:
           export NEXT_PUBLIC_Site_URL="${{ secrets.NEXT_PUBLIC_Site_URL }}"
           export NODE_ENV=production
           export NODE_OPTIONS="--max-old-space-size=1536"
+          export PORT=3001
           
-          # Install production dependencies only (no build needed - GitHub already built)
+          # Install production dependencies
+          echo "📥 Installing dependencies..."
           npm ci --production --silent
           
           echo "✅ Using pre-built application from GitHub Actions"
@@ -102,10 +105,44 @@ jobs:
           echo "✅ Build verification successful"
           
           # Stop existing PM2 process and start new one
-          pm2 stop techmapperz 2>/dev/null || echo "No existing process to stop"
-          pm2 delete techmapperz 2>/dev/null || echo "No existing process to delete"
-          pm2 start npm --name "techmapperz" -- start
+          echo "🔄 Restarting frontend application..."
+          pm2 stop techmapperz-frontend 2>/dev/null || echo "No existing process to stop"
+          pm2 delete techmapperz-frontend 2>/dev/null || echo "No existing process to delete"
+          
+          # Kill any process using port 3001 (multiple methods for reliability)
+          echo "🔍 Checking for processes on port 3001..."
+          PORT_PROCESS=$(lsof -ti:3001 2>/dev/null || echo "")
+          if [ -n "$PORT_PROCESS" ]; then
+            echo "⚠️ Found process(es) using port 3001: $PORT_PROCESS"
+            lsof -ti:3001 | xargs kill -9 2>/dev/null || true
+            fuser -k 3001/tcp 2>/dev/null || true
+          else
+            echo "✅ Port 3001 is free"
+          fi
+          
+          # Wait a moment for port to be released
+          sleep 5
+          
+          # Verify port is free before starting
+          if lsof -i:3001 >/dev/null 2>&1; then
+            echo "⚠️ Warning: Port 3001 is still in use after cleanup. Listing processes..."
+            lsof -i:3001 || true
+            echo "⚠️ Attempting aggressive cleanup..."
+            lsof -ti:3001 | xargs kill -9 2>/dev/null || true
+            fuser -k 3001/tcp 2>/dev/null || true
+            sleep 3
+          fi
+          
+          # Final check
+          if lsof -i:3001 >/dev/null 2>&1; then
+            echo "❌ ERROR: Port 3001 is still in use. Cannot start frontend."
+            echo "Please manually free port 3001."
+            exit 1
+          fi
+          
+          # Start the frontend with PM2
+          pm2 start npm --name "techmapperz-frontend" -- start
           pm2 save
           
-          echo "Deployment completed successfully!"
-          pm2 status
+          echo "✅ Deployment completed successfully!"
+          pm2 status techmapperz-frontend
