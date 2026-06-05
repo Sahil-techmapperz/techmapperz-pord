@@ -146,7 +146,11 @@ jobs:
           fi
           
           # Start the frontend with PM2
-          pm2 start npm --name "techmapperz-frontend" -- start
+          pm2 start npm --name "techmapperz-frontend" --watch --ignore-watch="node_modules .next public" -- start
+          pm2 save
+          
+          # Configure PM2 to auto-start on VPS reboot
+          sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup ubuntu -u $USER --hp $HOME || true
           pm2 save
           
           echo "✅ Deployment completed successfully!"
