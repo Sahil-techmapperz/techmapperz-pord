@@ -59,7 +59,7 @@ jobs:
         username: ${{ secrets.VPS_USERNAME }}
         key: ${{ secrets.VPS_PRIVATE_KEY }}
         port: ${{ secrets.VPS_PORT }}
-        source: ".next,package.json,package-lock.json"
+        source: ".next,public,package.json,package-lock.json,next.config.mjs"
         target: "/var/www/techmapperz-frontend-prod/"
         overwrite: true
       
@@ -91,7 +91,7 @@ jobs:
           
           # Install production dependencies
           echo "📥 Installing dependencies..."
-          npm ci --production --silent
+          npm install --production
           
           echo "✅ Using pre-built application from GitHub Actions"
           
