@@ -24,6 +24,28 @@ const nextConfig = {
       NEXT_PUBLIC_Site_URL: process.env.NEXT_PUBLIC_Site_URL,
     },
     
+    // Redirects configuration
+    async redirects() {
+      const redirects = [];
+  
+      // Redirect non-www to www (only in production)
+      if (process.env.NODE_ENV === 'production') {
+        redirects.push({
+          source: '/:path*',
+          has: [
+            {
+              type: 'host',
+              value: '^techmapperz\\.com$',
+            },
+          ],
+          destination: 'https://www.techmapperz.com/:path*',
+          permanent: true,
+        });
+      }
+  
+      return redirects;
+    },
+    
     // Build fallback for missing environment variables
     generateBuildId: async () => {
       // Warn about missing environment variables during build
