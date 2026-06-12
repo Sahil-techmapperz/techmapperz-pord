@@ -146,7 +146,7 @@ jobs:
           fi
           
           # Start the frontend with PM2
-          pm2 start npm --name "techmapperz-frontend" --watch --ignore-watch="node_modules .next public" -- start
+          pm2 start node_modules/next/dist/bin/next --name "techmapperz-frontend" --watch --ignore-watch=".next node_modules public" -- start -p 3001
           pm2 save
           
           # Configure PM2 to auto-start on VPS reboot
